@@ -1,2 +1,6 @@
 ._*
 .DS_Store
+
+# macOS metadata (the external drive writes AppleDouble files)
+._*
+.DS_Store
