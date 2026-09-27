@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cancan · AI Full-Stack Developer</title>
+  <meta name="description" content="Cancan，AI 全栈开发者，专注于 AI Agent 工作流、全栈产品开发、评测与部署。" />
+  <meta name="theme-color" content="#f6f4ef" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="assets/fonts/noto-sans-sc-700.woff2?v=25" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/noto-sans-sc-400.woff2?v=25" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/home.css?v=89" />
+  <script>
+    // The opening counter plays once per browsing session — the first time the site is opened in a tab — unless motion
+    // is reduced (append ?intro to see it again); intro.js takes it from here (or the page shows after 3 s regardless).
+    // Everything else — reloads, the Back button, links from this site's own pages — skips it and the scroll reveals
+    // ("returning"), and the browser puts the page back where it was.
+    (function () {
+      var root = document.documentElement, nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null, inside = false;
+      try { inside = !!document.referrer && new URL(document.referrer).origin === location.origin && (!nav || nav.type === 'navigate'); } catch (e) {}
+      var seen = false, force = /[?&]intro\b/.test(location.search);
+      try { seen = sessionStorage.getItem('intro-seen') === '1'; sessionStorage.setItem('intro-seen', '1'); } catch (e) {}
+      if (!force && (seen || (nav && nav.type !== 'navigate') || inside || matchMedia('(prefers-reduced-motion: reduce)').matches)) { root.classList.add('returning'); history.scrollRestoration = 'auto'; return; }
+      history.scrollRestoration = 'manual'; root.classList.add('intro');
+      setTimeout(function () { if (!window.__intro) { root.classList.remove('intro'); history.scrollRestoration = 'auto'; } }, 3000);
+    })();
+  </script>
+</head>
+<body>
+  <div class="preloader" data-preloader aria-hidden="true">
+    <p class="preloader-title" data-preloader-title>cancan portfolio ’26</p>
+    <p class="preloader-counter" data-preloader-counter>000</p>
+  </div>
+  <a class="skip" href="#name">跳到主要内容</a>
+  <div class="stage" id="top">
+  <header class="site-header" aria-label="页眉">
+    <div class="header-cell header-identity">
+      <a class="site-name" href="./" aria-label="Cancan 个人主页">Cancan</a>
+      <p>AI full-stack developer<br /><em>&amp; practical AI builder</em></p>
+    </div>
+    <div class="header-cell header-specialities">
+      <p class="header-label">specialities</p>
+      <ul>
+        <li>AI agent workflows</li>
+        <li>full-stack development</li>
+        <li>product engineering</li>
+        <li>evaluation &amp; deployment</li>
+      </ul>
+    </div>
+    <div class="header-cell header-work">
+      <p class="header-label">selected work</p>
+      <a href="projects/legal-ai/">Legal AI Agent</a>
+      <a href="https://github.com/Furinaaa-Cancan">More on GitHub</a>
+    </div>
+    <nav class="header-cell header-contact" aria-label="联系与社交链接">
+      <p class="header-label">contact me</p>
+      <a href="mailto:cancansauce@163.com">Email</a>
+      <a href="https://github.com/Furinaaa-Cancan">GitHub</a>
+    </nav>
+  </header>
+  <main id="main" class="hero" aria-labelledby="name">
+    <h1 id="name">把 AI Agent 做成<br /><em>真正可用的产品。</em></h1>
+    <div class="showreel" data-showreel>
+      <video poster="assets/showreel-poster.webp?v=cancan-1343" muted loop playsinline preload="metadata" aria-label="作品展示影片">
+        <source src="assets/showreel-10bit.mp4?v=cancan-1343" type='video/mp4; codecs="hvc1.2.4.L150.B0"' />
+        <source src="assets/showreel.mp4?v=cancan-1343" type="video/mp4" />
+      </video>
+      <div class="showreel-bar">
+        <button class="showreel-toggle" type="button" data-showreel-toggle aria-label="暂停视频">
+          <svg class="icon-play" viewBox="0 0 32 32" aria-hidden="true"><path d="M10 7.5v17l14-8.5z" /></svg>
+          <svg class="icon-pause" viewBox="0 0 32 32" aria-hidden="true"><path d="M10 7h4v18h-4zM18 7h4v18h-4z" /></svg>
+        </button>
+        <div class="showreel-seek">
+          <span data-showreel-now>00:00</span>
+          <input type="range" min="0" max="60" step="any" value="0" data-showreel-seek aria-label="播放进度" />
+          <span data-showreel-total>00:00</span>
+        </div>
+        <button class="showreel-sound" type="button" data-showreel-sound aria-pressed="false">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path class="speaker" d="M5 12h5l7-6v20l-7-6H5z" /><path class="waves" d="M21 11.5a6 6 0 0 1 0 9M24.5 8a11 11 0 0 1 0 16" /><path class="cross" d="M21 12l8 8M29 12l-8 8" /></svg>
+          <span>开启声音</span>
+        </button>
+      </div>
+    </div>
+  </main>
+  </div>
+  <section class="work" id="work" aria-labelledby="work-title">
+    <div class="work-title" data-reveal>
+      <h2 id="work-title" class="work-label">selected work</h2>
+      <p class="work-lead" lang="en" data-reveal-chars><em>AI products</em> that work in real business, from <em>research</em> and engineering to deployment.</p>
+    </div>
+    <div class="work-item work-item--compact" data-reveal>
+      <div class="work-asset">
+        <img src="assets/work-legal-ai-43.webp" alt="支架上的平板播放一段精华液广告视频，旁边摊开的法典与蓝色批注卡片，示意逐段核对广告与法律依据。" width="1448" height="1086" loading="lazy" data-parallax />
+        <span class="work-overlay" aria-hidden="true"></span>
+        <video src="assets/demo.mp4?v=4" muted loop playsinline preload="none" aria-hidden="true"></video>
+      </div>
+      <div class="work-meta">
+        <span class="work-year"><time datetime="2026-01">2026.01</time> – 至今</span>
+        <h3>法律广告合规 Agent</h3>
+        <template data-pii-html="work_desc_p"></template>
+        <template data-pii-html="work_points"></template>
+        <dl class="work-facts">
+          <div><dt>client</dt><dd><span data-pii="client">XXX 律师事务所</span></dd></div>
+          <div><dt>team</dt><dd>与美国波士顿大学在读博士联合创业<span>Boston University · PhD 在读合伙人</span></dd></div>
+          <div><dt>role</dt><dd>独立核心 AI 全栈工程师<span>全部系统架构由我独立搭建</span></dd></div>
+        </dl>
+        <template data-pii-html="work_more"></template>
+      </div>
+    </div><!-- /work-item -->
+    <a class="work-github" href="https://github.com/Furinaaa-Cancan" target="_blank" rel="noopener">More projects on GitHub <span aria-hidden="true">↗</span></a>
+  </section>
+  <template data-pii-html="sec_edu"></template>
+  <template data-pii-html="sec_research"></template>
+  <template data-pii-html="sec_awards"></template>
+  <section class="edu contact" id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title" class="work-label">contact</h2>
+    <div class="contact-body" data-reveal>
+      <p class="contact-lead">正在寻找 AI 全栈 / AI 应用开发实习，远程优先；也欢迎合作创业，欢迎邮件联系。</p>
+      <a class="contact-mail" href="mailto:cancansauce@163.com">cancansauce@163.com <span aria-hidden="true">↗</span></a>
+      <dl class="contact-list">
+        <div><dt>GitHub</dt><dd><a href="https://github.com/Furinaaa-Cancan" target="_blank" rel="noopener">github.com/Furinaaa-Cancan <span aria-hidden="true">↗</span></a></dd></div>
+        <div><dt>所在地</dt><dd>上海</dd></div>
+      </dl>
+    </div>
+  </section>
+  <div class="wrap">
+  </div>
+  <footer class="site-footer wrap"><span>© 2026 Cancan</span><a href="https://github.com/Furinaaa-Cancan">Furinaaa-Cancan <span aria-hidden="true">↗</span></a><a href="#top">回到顶部 ↑</a></footer>
+  <script src="assets/intro.js?v=3"></script>
+  <script src="assets/showreel.js?v=6"></script>
+  <script src="assets/work.js?v=7"></script>
+</body>
+</html>

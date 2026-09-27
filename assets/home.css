@@ -1,0 +1,233 @@
+@font-face{font-family:Inter;src:url("fonts/inter-400.woff2?v=25") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Inter;src:url("fonts/inter-500.woff2?v=25") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:Inter;src:url("fonts/inter-600.woff2?v=25") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:Inter;src:url("fonts/inter-700.woff2?v=25") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:Noto;src:url("fonts/noto-sans-sc-400.woff2?v=25") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Noto;src:url("fonts/noto-sans-sc-700.woff2?v=25") format("woff2");font-weight:700;font-display:swap}
+
+:root{--paper:#fffefa;--ink:#202020;--muted:#818181;--edge:24px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Noto,-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}
+a{color:inherit;text-decoration:none}
+a:hover{color:#666}
+a:focus-visible{outline:2px solid #2447a0;outline-offset:5px}
+p,h1,ul{margin:0}
+ul{list-style:none;padding:0}
+::selection{background:#e6e3d8}
+.skip{position:absolute;left:var(--edge);top:-60px;z-index:10;padding:8px 12px;background:var(--ink);color:#fff}
+.skip:focus{top:10px}
+
+/* Four columns and oversized typography follow the supplied Felbar reference. */
+.stage{min-height:100svh;padding-bottom:36px}
+.site-header{width:calc(100% - var(--edge)*2);min-height:335px;margin:28px var(--edge) 0;display:grid;grid-template-columns:34% 25% 25% 16%;align-items:start}
+.header-cell{min-width:0;font-size:clamp(18px,1.8vw,25px);font-weight:700;line-height:1.22;letter-spacing:-.045em}
+.header-label{margin-bottom:16px;color:var(--muted);font-size:clamp(14px,1.3vw,18px);font-weight:500;line-height:1.3;letter-spacing:-.025em}
+.site-name{display:block;width:fit-content;border-bottom:1.5px solid currentColor;font-size:clamp(20px,1.8vw,25px);line-height:1.12;font-weight:700;letter-spacing:-.045em}
+.site-name span{font-size:.82em}
+.header-identity>p{margin-top:19px;font-size:clamp(27px,2.5vw,36px);font-weight:700;line-height:1.05;letter-spacing:-.065em}
+.header-identity em{font-family:Georgia,"Times New Roman",serif;font-size:1.06em;font-weight:400;letter-spacing:-.07em;white-space:nowrap}
+.header-specialities li{margin:0 0 2px}
+.header-work a,.header-contact a{display:block;width:fit-content;margin:0 0 4px;border-bottom:1.5px solid currentColor;line-height:1.14}
+.site-header .header-contact{display:block;margin:0;gap:0;font-size:clamp(18px,1.8vw,25px)}
+
+.hero{width:calc(100% - var(--edge)*2);margin:0 var(--edge)}
+.hero h1{font-size:clamp(74px,9.25vw,160px);font-weight:700;line-height:1.04;letter-spacing:-.072em;white-space:nowrap}
+.hero h1 em{font-family:"Songti SC",STSong,"Noto Serif CJK SC",serif;font-size:1.02em;font-weight:400;font-style:italic;letter-spacing:-.077em}
+
+/* Showreel: the reference's full-width 16:10 film block right under the headline. */
+/* Never taller than the screen: the film's width follows the viewport height, so the whole 16:10 frame
+   always fits in one view (full width on tall screens, centred and a little narrower on short ones). */
+.showreel{position:relative;width:min(100%,calc((100svh - var(--edge)*2)*1.6));margin:clamp(14px,1.6vw,24px) auto 0;aspect-ratio:16/10;overflow:hidden;background:#000}
+.showreel video{display:block;width:100%;height:100%;object-fit:cover}
+.showreel{--pad:clamp(12px,1.6vw,24px);--pill:rgba(255,254,250,.86)}
+/* Controls: play · time + seek · sound in one row. They fade in while the pointer moves over the film
+   (or on tap / keyboard focus / pause) and fade out after 2 s of stillness, leaving the picture clean. */
+.showreel-bar{position:absolute;left:var(--pad);right:var(--pad);bottom:var(--pad);display:flex;align-items:center;gap:10px;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity .6s,transform .6s cubic-bezier(.625,.05,0,1)}
+.showreel.is-active .showreel-bar,.showreel:has(:focus-visible) .showreel-bar,.showreel.is-paused .showreel-bar,.showreel.is-scrubbing .showreel-bar,.showreel-bar:hover{opacity:1;pointer-events:auto;transform:none;transition-duration:.25s}
+.showreel.is-idle video{cursor:none}
+.showreel-bar button,.showreel-seek{height:44px;border:0;border-radius:22px;background:var(--pill);color:var(--ink);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.showreel-bar button{flex:none;cursor:pointer}
+.showreel-bar button:hover{background:#fffefa}
+.showreel-bar button:focus-visible,.showreel-seek:has(:focus-visible){outline:2px solid #2447a0;outline-offset:3px}
+.showreel-toggle{width:44px;display:grid;place-items:center}
+.showreel-toggle svg{width:18px;height:18px;fill:currentColor}
+.showreel .icon-play,.showreel.is-paused .icon-pause{display:none}
+.showreel.is-paused .icon-play{display:block}
+.showreel-seek{flex:1;min-width:0;display:flex;align-items:center;gap:12px;padding:0 18px;font:600 13px/1 Inter,Noto,sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.showreel-seek input{flex:1;min-width:0;height:24px;margin:0;background:none;cursor:pointer;-webkit-appearance:none;appearance:none}
+.showreel-seek input:focus{outline:none}
+.showreel-seek input::-webkit-slider-runnable-track{height:3px;border-radius:2px;background:linear-gradient(90deg,var(--ink) calc(var(--p,0)*100%),rgba(32,32,32,.18) 0)}
+.showreel-seek input::-moz-range-track{height:3px;border-radius:2px;background:linear-gradient(90deg,var(--ink) calc(var(--p,0)*100%),rgba(32,32,32,.18) 0)}
+.showreel-seek input::-webkit-slider-thumb{width:13px;height:13px;margin-top:-5px;border:0;border-radius:50%;background:var(--ink);-webkit-appearance:none;appearance:none;transition:transform .15s}
+.showreel-seek input::-moz-range-thumb{width:13px;height:13px;border:0;border-radius:50%;background:var(--ink)}
+.showreel-seek input:hover::-webkit-slider-thumb,.showreel-seek input:active::-webkit-slider-thumb{transform:scale(1.25)}
+.showreel-sound{display:flex;align-items:center;gap:8px;padding:0 16px 0 12px;font:600 14px/1 Inter,Noto,sans-serif;letter-spacing:-.01em}
+.showreel-sound svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.showreel-sound .speaker{fill:currentColor;stroke:none}
+.showreel-sound .waves,.showreel-sound[aria-pressed="true"] .cross{display:none}
+.showreel-sound[aria-pressed="true"] .waves{display:inline}
+@media(max-width:650px){.showreel-bar{gap:6px}.showreel-bar button,.showreel-seek{height:36px}.showreel-toggle{width:36px}.showreel-seek{gap:8px;padding:0 12px;font-size:11px}.showreel-sound{padding:0 10px}.showreel-sound span{display:none}}
+
+/* Selected work, after the reference's featured projects: a small label beside a large mixed statement,
+   then one row per project — a square picture on the left (drifts on scroll; on hover it darkens and
+   the product's screen recording fades in on top), year / name / View project on the right. */
+.work{width:calc(100% - var(--edge)*2);margin:0 var(--edge);padding:clamp(56px,6.5vw,110px) 0 clamp(56px,6.5vw,110px)}
+.work-title{display:grid;grid-template-columns:18% 1fr;align-items:start;margin-bottom:clamp(40px,5vw,84px)}
+.work-label{margin:.9em 0 0;font-size:clamp(13px,1.26vw,17px);font-weight:600;letter-spacing:-.01em}
+.work-lead{font-size:clamp(34px,5.9vw,100px);font-weight:700;line-height:.98;letter-spacing:-.055em;text-wrap:balance}
+.work-lead em{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.06em}
+.work-lead .word{display:inline-block;white-space:nowrap}
+.work-item{display:flex;padding-bottom:9px;border-bottom:1px solid #d9d9d9;color:inherit}
+.work-item:hover{color:inherit}
+.work-item+.work-item{margin-top:20px}
+.work-asset{position:relative;flex:none;width:50%;aspect-ratio:1;overflow:hidden;background:#e9e5da}
+.work-asset img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:translateY(calc(var(--drift,0)*1%)) scale(1.1);will-change:transform}
+/* Public card: the illustration at its own 4:3, so the shorter meta column (no description) fills the row. */
+.work-item--compact .work-asset{aspect-ratio:4/3}
+.work-overlay{position:absolute;inset:0;background:rgba(0,0,0,.8);opacity:0}
+.work-asset video{position:absolute;left:50%;top:50%;width:83%;aspect-ratio:16/10;transform:translate(-50%,-50%);object-fit:cover;opacity:0}
+.work-overlay,.work-asset video{transition:opacity .5s cubic-bezier(.65,0,0,1)}
+.work-item:hover .work-overlay,.work-item:hover .work-asset video,.work-item:focus-visible .work-overlay,.work-item:focus-visible .work-asset video{opacity:1}
+.work-meta{flex:1;display:flex;flex-direction:column;gap:9px;padding:9px 0 0 clamp(9px,1.4vw,24px);min-width:0}
+.work-year,.work-more{font-size:clamp(13px,1.26vw,17px);font-weight:600;letter-spacing:-.01em}
+.work-year{color:var(--muted)}
+.work-meta h3{margin:0;font-size:clamp(28px,4.6vw,78px);font-weight:700;line-height:.95;letter-spacing:-.055em}
+.work-desc{max-width:30em;margin-top:clamp(8px,1vw,16px);font-size:clamp(15px,1.3vw,19px);font-weight:500;line-height:1.55;letter-spacing:-.01em;color:#4a4a4a}
+.work-points{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.4vw,20px) clamp(16px,2vw,32px);margin:clamp(14px,1.8vw,30px) 0 0;padding:0;list-style:none}
+.work-points li{display:flex;flex-direction:column;gap:4px;color:var(--muted);font-size:clamp(13px,1.1vw,15px);font-weight:500;line-height:1.45;letter-spacing:-.01em}
+.work-points b{color:var(--ink);font-size:clamp(15px,1.3vw,19px);font-weight:700;letter-spacing:-.02em}
+.work-facts{margin:auto 0 0;padding-top:clamp(20px,2.5vw,40px)}
+.work-facts>div{display:grid;grid-template-columns:clamp(64px,7vw,110px) 1fr;gap:12px;padding:12px 0;border-top:1px solid #d9d9d9}
+.work-facts dt{color:var(--muted);font-size:clamp(13px,1.1vw,15px);font-weight:500;line-height:1.5}
+.work-facts dd{margin:0;font-size:clamp(15px,1.3vw,19px);font-weight:700;line-height:1.4;letter-spacing:-.02em}
+.work-facts dd span{display:block;margin-top:3px;color:var(--muted);font-size:.84em;font-weight:500;letter-spacing:-.01em}
+.work-more{width:fit-content;border-bottom:1.5px solid transparent;transition:border-color .3s}
+.work-item:hover .work-more{border-color:currentColor}
+.work-github{display:block;width:fit-content;margin:clamp(16px,1.6vw,24px) 0 0 auto;padding-bottom:1px;border-bottom:1.5px solid currentColor;font-size:clamp(14px,1.2vw,17px);font-weight:600;letter-spacing:-.01em}
+/* Anonymous stand-ins (data-pii) read as the text around them, never as the labels they sit in. */
+span[data-pii]{display:inline!important;margin:0!important;color:inherit!important;font:inherit!important;letter-spacing:inherit!important}
+html.js [data-reveal]{opacity:0}
+
+/* Education: the same label column as selected work, then one hairline row per school —
+   dates, school (with its English name and programme), and status / grades on the right. */
+.edu{width:calc(100% - var(--edge)*2);margin:0 var(--edge);padding:0 0 clamp(56px,6.5vw,110px);display:grid;grid-template-columns:18% 1fr;align-items:start}
+.edu .work-label{margin-top:clamp(14px,1.4vw,22px)}
+.edu-list{margin:0;padding:0;list-style:none;border-bottom:1px solid #d9d9d9}
+.edu-row{display:grid;grid-template-columns:clamp(120px,13vw,200px) 1fr auto;gap:clamp(12px,2vw,32px);align-items:start;padding:clamp(14px,1.4vw,22px) 0 clamp(22px,2.4vw,40px);border-top:1px solid #d9d9d9}
+.edu-when{padding-top:.5em;color:var(--muted);font-size:clamp(13px,1.1vw,15px);font-weight:600;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.edu-school h3{margin:0;font-size:clamp(28px,3.6vw,60px);font-weight:700;line-height:1.05;letter-spacing:-.05em}
+.edu-school p span{white-space:nowrap}
+.edu-en{display:block;margin-top:6px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(15px,1.35vw,20px);font-style:italic;letter-spacing:-.02em;color:#4a4a4a}
+.edu-school p{margin-top:clamp(10px,1vw,16px);font-size:clamp(14px,1.2vw,17px);font-weight:600;line-height:1.5;letter-spacing:-.01em}
+.pubs .edu-school h3{max-width:34em;font-size:clamp(20px,1.9vw,30px);line-height:1.18;letter-spacing:-.03em}
+.pubs .edu-school .pub-sum{margin-top:clamp(8px,.8vw,12px);color:#4a4a4a;font-weight:500}
+/* Abstract: a small toggle under each paper opens its English abstract in a floating card (native popover). */
+.pub-toggle{margin-top:clamp(10px,1vw,14px);padding:0 0 1px;border:0;border-bottom:1.5px solid currentColor;background:none;color:var(--ink);font:600 clamp(13px,1.1vw,15px)/1.3 Inter,Noto,sans-serif;letter-spacing:-.01em;cursor:pointer}
+.pub-toggle span{display:inline-block;transition:transform .25s}
+.pub-toggle[aria-expanded="true"] span{transform:rotate(45deg)}
+.pub-toggle:focus-visible{outline:2px solid #2447a0;outline-offset:3px}
+.pub-abstract{position:fixed;inset:auto;margin:0;width:min(620px,calc(100vw - 32px));max-height:min(70vh,560px);overflow:auto;padding:clamp(18px,1.8vw,26px) clamp(18px,2vw,30px);border:1px solid #d9d9d9;border-radius:14px;background:#fffefa;color:var(--ink);box-shadow:0 18px 50px rgba(32,32,32,.16),0 2px 8px rgba(32,32,32,.06);font-size:14px;line-height:1.62;letter-spacing:-.005em;opacity:0;transform:translateY(6px);transition:opacity .22s,transform .3s cubic-bezier(.625,.05,0,1),overlay .3s allow-discrete,display .3s allow-discrete}
+.pub-abstract:popover-open{opacity:1;transform:none}
+@starting-style{.pub-abstract:popover-open{opacity:0;transform:translateY(6px)}}
+.pub-abstract p{margin:0;text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+.pub-abstract .pub-abstract-label{text-align:left}
+.pub-abstract p+p{margin-top:8px}
+.pub-abstract b{font-weight:700}
+.pub-abstract .pub-abstract-label{margin-bottom:10px;color:var(--muted);font-size:12px;font-weight:600;letter-spacing:.02em}
+/* Awards: one hairline row each — date, competition (with role), award level on the right. */
+.award-row{display:grid;grid-template-columns:clamp(120px,13vw,200px) 1fr auto;gap:clamp(12px,2vw,32px);align-items:baseline;padding:clamp(14px,1.3vw,20px) 0;border-top:1px solid #d9d9d9}
+.award-row .edu-when{padding-top:0}
+.award-name h3{display:inline;margin:0;font-size:clamp(17px,1.5vw,22px);font-weight:700;line-height:1.35;letter-spacing:-.02em}
+.award-note{margin-left:12px;color:var(--muted);font-size:clamp(13px,1.1vw,15px);font-weight:500;white-space:nowrap}
+.award-level{text-align:right;white-space:nowrap}
+.award-level strong{font-size:clamp(17px,1.5vw,22px);font-weight:700;letter-spacing:-.02em}
+.award-en{display:block;font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:clamp(13px,1.1vw,15px);color:#4a4a4a}
+/* Contact: one line of intent, the address set large, then GitHub and location on hairline rows. */
+.contact-body{border-top:1px solid #d9d9d9;padding-top:clamp(18px,1.8vw,28px)}
+.contact-lead{font-size:clamp(16px,1.4vw,20px);font-weight:600;letter-spacing:-.01em;text-wrap:pretty}
+.contact-mail{display:inline-block;margin-top:clamp(10px,1.2vw,18px);font-size:clamp(34px,5.4vw,92px);font-weight:700;line-height:1.02;letter-spacing:-.055em;white-space:nowrap;border-bottom:3px solid transparent;transition:border-color .3s}
+.contact-mail span{display:inline-block;font-weight:400;transition:transform .3s cubic-bezier(.625,.05,0,1)}
+.contact-mail:hover{color:inherit;border-bottom-color:currentColor}
+.contact-mail:hover span{transform:translate(4px,-4px)}
+.contact-list{margin:clamp(24px,2.6vw,40px) 0 0;border-bottom:1px solid #d9d9d9}
+.contact-list>div{display:grid;grid-template-columns:clamp(120px,13vw,200px) 1fr;gap:12px;padding:12px 0;border-top:1px solid #d9d9d9}
+.contact-list dt{color:var(--muted);font-size:clamp(13px,1.1vw,15px);font-weight:500}
+.contact-list dd{margin:0;font-size:clamp(15px,1.3vw,19px);font-weight:700;letter-spacing:-.02em}
+.contact-list a{border-bottom:1.5px solid currentColor}
+.edu-advisor{grid-column:2/-1;display:flex;align-items:center;gap:clamp(16px,2vw,32px);margin-top:clamp(-8px,-.6vw,-4px);padding-top:clamp(12px,1.2vw,18px);border-top:1px solid #e6e2d8}
+.edu-advisor-name{flex:none;display:flex;flex-direction:column;gap:2px}
+.edu-advisor-name span{color:var(--muted);font-size:clamp(12px,1vw,14px);font-weight:500}
+.edu-advisor-name b{color:#2447a0;font-size:clamp(22px,2vw,30px);font-weight:700;line-height:1.1;letter-spacing:-.03em}
+.edu-advisor-titles{margin:0;padding:0 0 0 clamp(16px,2vw,32px);list-style:none;border-left:1px solid #d9d9d9;color:#4a4a4a;font-size:clamp(13px,1.1vw,15px);font-weight:500;line-height:1.7}
+.edu-advisor-titles strong{color:var(--ink);font-weight:700}
+.edu-advisor-link{margin-left:auto;align-self:center;flex:none;padding-bottom:1px;border-bottom:1.5px solid currentColor;font-size:clamp(13px,1.1vw,15px);font-weight:600;white-space:nowrap}
+.edu-side{display:flex;flex-direction:column;align-items:flex-end;gap:clamp(10px,1vw,14px)}
+.edu-note{padding:.45em .9em;border:1px solid currentColor;border-radius:99px;font-size:clamp(13px,1.1vw,15px);font-weight:600;white-space:nowrap}
+.edu-facts{display:flex;gap:clamp(14px,1.8vw,32px);margin:0}
+.edu-facts dt{color:var(--muted);font-size:clamp(12px,1vw,14px);font-weight:500}
+.edu-facts dd{margin:2px 0 0;font-size:clamp(24px,2.4vw,40px);font-weight:700;line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.edu-facts dd span{color:var(--muted);font-size:.42em;font-weight:600;letter-spacing:0}
+
+.site-footer{width:calc(100% - var(--edge)*2);margin:0 var(--edge);padding:20px 0 32px;border-top:1px solid #ddd;display:flex;gap:24px;color:#777;font-size:11px}
+.site-footer>a:last-of-type{margin-left:auto}
+
+/* Opening counter (filipfelbar.com's preloader): assets/intro.js drives it; hidden unless html.intro. */
+.preloader{display:none}
+html.intro .preloader{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;background:var(--paper);text-align:center;font-weight:600}
+html.intro:not(.intro-reveal){overflow:hidden}
+.preloader-title{font-size:clamp(17px,1.82vw,24px);line-height:1.2;letter-spacing:-.03em}
+.preloader-counter{font-size:clamp(13px,1.34vw,18px);line-height:1.2;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.mask{display:inline-block;overflow:clip;padding:0 .08em .14em;margin:0 -.08em -.14em}
+.mask>span{display:inline-block;white-space:pre}
+
+@media(max-width:760px){
+  .site-header{min-height:0;grid-template-columns:1.2fr 1fr;gap:38px 28px}
+  .header-work{grid-column:1;grid-row:2}
+  .header-contact{grid-column:2;grid-row:2}
+  .hero{margin-top:90px}
+  .hero h1{font-size:clamp(64px,9vw,82px)}
+}
+@media(max-width:650px){
+  :root{--edge:18px}
+  .site-header{margin-top:20px;grid-template-columns:1fr 1fr;gap:34px 18px}
+  .header-identity{grid-column:1/-1}
+  .header-specialities{grid-column:1;grid-row:2}
+  .header-work{grid-column:2;grid-row:2}
+  .header-contact{grid-column:1/-1;grid-row:3}
+  .header-cell,.site-header .header-contact{font-size:clamp(15px,3.6vw,19px)}
+  .header-label{font-size:13px;margin-bottom:7px}
+  .header-identity>p{margin-top:10px;font-size:clamp(27px,7vw,34px)}
+  .site-name{font-size:22px}
+  .hero{margin-top:80px}
+  .hero h1{font-size:clamp(39px,9vw,60px);line-height:1.09;white-space:normal}
+  .hero h1 br{display:none}
+  .site-footer{flex-wrap:wrap;gap:10px 20px}
+  .work-title{grid-template-columns:1fr;gap:14px}
+  .work-label{margin:0}
+  .work-item{flex-direction:column}
+  .work-asset{width:100%}
+  .work-meta{padding-left:0}
+  .work-facts{padding-top:10px}
+  .edu{grid-template-columns:1fr;gap:14px}
+  .edu .work-label{margin:0}
+  .edu-row{grid-template-columns:1fr;gap:10px}
+  .edu-when{padding-top:0}
+  .edu-note{justify-self:start}
+  .edu-side{align-items:flex-start}
+  .award-row{grid-template-columns:1fr auto;gap:6px 14px;align-items:start}
+  .award-row .edu-when{grid-column:1;grid-row:1}
+  .award-level{grid-column:2;grid-row:1}
+  .award-name{grid-column:1/-1;grid-row:2}
+  .award-note{display:block;margin:2px 0 0}
+  .contact-list>div{grid-template-columns:90px 1fr}
+  .contact-mail{font-size:7.7vw}
+  .edu-advisor{grid-column:1;flex-wrap:wrap;margin-top:0}
+  .edu-advisor-link{margin-left:0}
+}
+@media(max-width:380px){
+  :root{--edge:14px}
+  .header-cell,.site-header .header-contact{font-size:14px}
+  .hero h1{font-size:39px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
