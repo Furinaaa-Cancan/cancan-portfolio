@@ -1,9 +1,9 @@
 /* Furinaaa-Cancan — portfolio. Editorial, quiet, no JS.
    Fonts are self-hosted subsets (≈100 KB total) so the page renders the same everywhere. */
 
-@font-face { font-family: "Noto Sans SC Sub"; font-weight: 400; font-display: swap; src: url("fonts/noto-sans-sc-400.woff2?v=5") format("woff2"); }
-@font-face { font-family: "Noto Sans SC Sub"; font-weight: 500; font-display: swap; src: url("fonts/noto-sans-sc-500.woff2?v=5") format("woff2"); }
-@font-face { font-family: "Noto Sans SC Sub"; font-weight: 700; font-display: swap; src: url("fonts/noto-sans-sc-700.woff2?v=5") format("woff2"); }
+@font-face { font-family: "Noto Sans SC Sub"; font-weight: 400; font-display: swap; src: url("fonts/noto-sans-sc-400.woff2?v=6") format("woff2"); }
+@font-face { font-family: "Noto Sans SC Sub"; font-weight: 500; font-display: swap; src: url("fonts/noto-sans-sc-500.woff2?v=6") format("woff2"); }
+@font-face { font-family: "Noto Sans SC Sub"; font-weight: 700; font-display: swap; src: url("fonts/noto-sans-sc-700.woff2?v=6") format("woff2"); }
 @font-face { font-family: "Inter Sub"; font-weight: 400; font-display: swap; src: url("fonts/inter-400.woff2") format("woff2"); }
 @font-face { font-family: "Inter Sub"; font-weight: 500; font-display: swap; src: url("fonts/inter-500.woff2") format("woff2"); }
 @font-face { font-family: "Inter Sub"; font-weight: 600; font-display: swap; src: url("fonts/inter-600.woff2") format("woff2"); }
@@ -189,7 +189,7 @@ main { max-width: var(--w); margin: 0 auto; padding: 0 var(--gutter) 72px; }
   align-items: stretch;
 }
 .left { grid-area: left; }
-.showcase { grid-area: demo; margin: 0; align-self: start; justify-self: end; width: 100%; }
+.showcase { grid-area: demo; margin: 0; align-self: center; justify-self: end; width: 100%; }
 .left { display: flex; flex-direction: column; gap: 26px; }
 .prob-row { flex: 1; min-height: 0; }
 .facts { display: grid; grid-template-columns: auto auto auto; justify-content: start; gap: 40px; }
