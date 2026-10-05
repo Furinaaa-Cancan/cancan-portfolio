@@ -7,9 +7,9 @@
   <meta name="description" content="Cancan，AI 全栈开发者，专注于 AI Agent 工作流、全栈产品开发、评测与部署。" />
   <meta name="theme-color" content="#f6f4ef" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="preload" href="assets/fonts/noto-sans-sc-700.woff2?v=25" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="assets/fonts/noto-sans-sc-400.woff2?v=25" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="assets/home.css?v=89" />
+  <link rel="preload" href="assets/fonts/noto-sans-sc-700.woff2?v=26" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/noto-sans-sc-400.woff2?v=26" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/home.css?v=90" />
   <script>
     // The opening counter plays once per browsing session — the first time the site is opened in a tab — unless motion
     // is reduced (append ?intro to see it again); intro.js takes it from here (or the page shows after 3 s regardless).
@@ -90,7 +90,7 @@
       <h2 id="work-title" class="work-label">selected work</h2>
       <p class="work-lead" lang="en" data-reveal-chars><em>AI products</em> that work in real business, from <em>research</em> and engineering to deployment.</p>
     </div>
-    <div class="work-item work-item--compact" data-reveal>
+    <a class="work-item" href="projects/legal-ai/" data-reveal>
       <div class="work-asset">
         <img src="assets/work-legal-ai-43.webp" alt="支架上的平板播放一段精华液广告视频，旁边摊开的法典与蓝色批注卡片，示意逐段核对广告与法律依据。" width="1448" height="1086" loading="lazy" data-parallax />
         <span class="work-overlay" aria-hidden="true"></span>
@@ -102,16 +102,21 @@
       <div class="work-meta">
         <span class="work-year"><time datetime="2026-01">2026.01</time> – 至今</span>
         <h3>法律广告合规 Agent</h3>
-        <template data-pii-html="work_desc_p"></template>
-        <template data-pii-html="work_points"></template>
+        <p class="work-desc">律所广告合规审核的 AI 工作台，把 AI 初稿之后的查证、修订、签认与正式交付做成一条完整工作流。</p>
+        <ul class="work-points">
+          <li><b>定点修订</b>选中原文，只改指定范围</li>
+          <li><b>逐段签认</b>签认与内容版本绑定</li>
+          <li><b>正式交付</b>Word / PDF，保留审计信息</li>
+          <li><b>知识沉淀</b>已确认意见入库复用</li>
+        </ul>
         <dl class="work-facts">
-          <div><dt>client</dt><dd><span data-pii="client">XXX 律师事务所</span></dd></div>
+          <div><dt>client</dt><dd>上海中申律师事务所</dd></div>
           <div><dt>team</dt><dd>与美国波士顿大学在读博士联合创业<span>Boston University · PhD 在读合伙人</span></dd></div>
           <div><dt>role</dt><dd>独立核心 AI 全栈工程师<span>全部系统架构由我独立搭建</span></dd></div>
         </dl>
-        <template data-pii-html="work_more"></template>
+        <span class="work-more">View project</span>
       </div>
-    </div><!-- /work-item -->
+    </a><!-- /work-item -->
     <a class="work-github" href="https://github.com/Furinaaa-Cancan" target="_blank" rel="noopener">More projects on GitHub <span aria-hidden="true">↗</span></a>
   </section>
   <template data-pii-html="sec_edu"></template>

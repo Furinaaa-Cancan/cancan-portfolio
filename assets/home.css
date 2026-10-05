@@ -2,8 +2,8 @@
 @font-face{font-family:Inter;src:url("fonts/inter-500.woff2?v=25") format("woff2");font-weight:500;font-display:swap}
 @font-face{font-family:Inter;src:url("fonts/inter-600.woff2?v=25") format("woff2");font-weight:600;font-display:swap}
 @font-face{font-family:Inter;src:url("fonts/inter-700.woff2?v=25") format("woff2");font-weight:700;font-display:swap}
-@font-face{font-family:Noto;src:url("fonts/noto-sans-sc-400.woff2?v=25") format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:Noto;src:url("fonts/noto-sans-sc-700.woff2?v=25") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:Noto;src:url("fonts/noto-sans-sc-400.woff2?v=26") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Noto;src:url("fonts/noto-sans-sc-700.woff2?v=26") format("woff2");font-weight:700;font-display:swap}
 
 :root{--paper:#fffefa;--ink:#202020;--muted:#818181;--edge:24px}
 *{box-sizing:border-box}
@@ -83,8 +83,6 @@ ul{list-style:none;padding:0}
 .work-item+.work-item{margin-top:20px}
 .work-asset{position:relative;flex:none;width:50%;aspect-ratio:1;overflow:hidden;background:#e9e5da}
 .work-asset img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:translateY(calc(var(--drift,0)*1%)) scale(1.1);will-change:transform}
-/* Public card: the illustration at its own 4:3, so the shorter meta column (no description) fills the row. */
-.work-item--compact .work-asset{aspect-ratio:4/3}
 .work-overlay{position:absolute;inset:0;background:rgba(0,0,0,.8);opacity:0}
 .work-asset video{position:absolute;left:50%;top:50%;width:83%;aspect-ratio:16/10;transform:translate(-50%,-50%);object-fit:cover;opacity:0}
 .work-overlay,.work-asset video{transition:opacity .5s cubic-bezier(.65,0,0,1)}
