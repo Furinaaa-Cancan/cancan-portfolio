@@ -1,0 +1,20 @@
+{
+  "mode": "built-in image_gen",
+  "jobs": [
+    {
+      "key": "model-scene",
+      "refs": [
+        "/Volumes/Seagate/GitHub项目/GitHub个人资料/cancan-public/assets/rem-cover/hair-model.png",
+        "/Volumes/Seagate/蕾姆语音AI模型/02_V2_第二版计划/42_场景_短片/头发讲解视频/07_第四期制作教程_R31c/视频小icon_沿用旧视频_v01/成图/37_蕾姆抱绘图板.png"
+      ],
+      "prompt": "Create a wide 2.4:1 illustrated scene for the Live2D section of an existing art portfolio triptych. Use the provided original artwork as the defining visual source, not merely inspiration: image 1 is the completed blue-haired model to display on a drawing monitor, image 2 is the chibi character holding her drawing tablet. Preserve their original face, hairstyle, colors, costumes and flat grainy illustrated paper style. Scene: a small, believable character artist's workspace, softly lit warm ivory studio wall, blue-green drawing desk, widescreen drawing monitor showing the complete blue-haired model from image 1, the chibi character from image 2 at the desk drawing on her tablet, stylus and a couple of stacked sketch sheets. Place this whole compact workspace in the RIGHT 65% of the wide frame; left 30% is quiet warm ivory wall for website labels. Desk and monitor must read as one coherent scene, not floating icons. The complete model is visible ONLY within the monitor. Absolutely no bald head, no before-after comparison, no extra character designs, no flowers floating around, no abstract wave sculpture, no photoreal or glossy 3D. Color palette stays warm cream, muted sage and the character's blue. Essential character face and model face in upper-middle portion, leave some breathing room below for a diagonal panel crop. No text, no logos, no typography, no watermark."
+    },
+    {
+      "key": "voice-scene",
+      "refs": [
+        "/Volumes/Seagate/蕾姆语音AI模型/06_AI翻唱_蕾姆/08_HowTo_AI翻唱_讲解_v02/03_配套icon/成图/04_蕾姆试音调台.png"
+      ],
+      "prompt": "Create a wide 3:1 illustrated recording-booth scene for the middle strip of an existing art portfolio triptych. The provided chibi blue-haired character holding a microphone and operating a yellow sound console is the EXACT subject and style reference. Preserve her original face, hair ornaments, maid outfit, expression, microphone and tactile flat paper-grain illustration style. Build a coherent miniature recording studio around her: a sage green tabletop, her yellow sound console, a small monitor with simple speech waveform, headphones resting nearby, a quiet sage-and-cream acoustic panel wall. Character is actually at the desk recording speech and adjusting sound. Stage this workspace within the RIGHT 65% of the wide image, with face at horizontal 65%, vertical 42%; all important scene elements within the middle 65% of the image height. LEFT 30% is quiet light sage wall for website labels. A warm softly illustrated room with depth and atmosphere, same handmade illustration family as the source. Do not turn into a concert or singing stage. No bald head, no extra characters, no flowing abstract ribbons, no surreal shapes, no glossy plastic, no photographic objects, no text or logos. Keep the blue-haired character unmistakably identical to the provided artwork."
+    }
+  ]
+}

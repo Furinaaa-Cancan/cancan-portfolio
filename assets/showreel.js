@@ -1,4 +1,4 @@
-// Showreel under the headline, as on filipfelbar.com: muted loop that plays while on screen and pauses
+// Case-study product film: muted loop that plays while on screen and pauses
 // off screen. Controls: play/pause, a seek bar with elapsed / total time, and sound — the film is cut to
 // its music, but browsers only autoplay muted video, so the sound button plays it once
 // from the top with the soundtrack, then the loop goes back to muted.

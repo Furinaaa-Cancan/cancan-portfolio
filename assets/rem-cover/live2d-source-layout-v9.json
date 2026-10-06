@@ -1,0 +1,10 @@
+{
+  "design": "Original winter character plus eye study and actual hair rig; still composition; no generated face or screen.",
+  "source_files": {
+    "winter-rem-original.png": "/Volumes/Seagate/蕾姆语音AI模型/02_V2_第二版计划/40_展示与教程/第二期_果冻眼制作讲解_v01/03_蕾姆人物与装饰组件/成图/07_蕾姆_招手.png",
+    "hair-rig-original.png": "/Volumes/Seagate/蕾姆语音AI模型/02_V2_第二版计划/42_场景_短片/头发讲解视频/07_第四期制作教程_R31c/素材/03_结构/前刘海细链.png"
+  },
+  "eye": "live2d-eye.png",
+  "reviewed": "Asset navigation and file inventory; original tutorial covers and images; samples from eye/head/rig videos. Current face-tracking and AI interaction directories empty.",
+  "unchanged": "02 / AI voice and 03 / singing"
+}

@@ -1,0 +1,11 @@
+{
+  "mode": "built-in image_gen (background only)",
+  "prompt": "Create ONLY a wide 2.4:1 illustrated backdrop for a portfolio collage of real Live2D research outputs. Follow this established video illustration prompt's art language precisely: refined geometric gouache, broad flat color planes, gentle matte handmade paper pigment texture, slightly hand-cut edges, flattened pictorial space, a few substantial shapes. Scene is a layered paper exhibition space with three broad offset planes in warm ivory, powder ice blue and muted sage, a low shelf-like pale blue plane along the lower-right, and two softly curved large paper silhouettes receding behind. Add depth through overlap and separated color planes, not photoreal shading. Right two thirds have richer layered composition to support artwork cards added later; left quarter remains quiet warm ivory for a title. Background should fill the whole rectangle with an intentional composition, not an isolated small icon. No objects, characters, faces, heads, machines, monitors, plants, stars, flowers, microphones, tools, letters, digits, text, UI, diagrams, grid, cast shadow, realistic lighting, digital gradients, plastic or 3D render. No borders or pre-made cards. Keep restrained, tactile and elegant.",
+  "background": "live2d-paper-backdrop-v3.png",
+  "sourceMedia": {
+    "motion": "/Volumes/Seagate/蕾姆语音AI模型/02_V2_第二版计划/42_场景_短片/头发讲解视频/07_第四期制作教程_R31c/素材/05_运动/完整转头.mp4",
+    "hairRig": "/Volumes/Seagate/蕾姆语音AI模型/02_V2_第二版计划/42_场景_短片/头发讲解视频/07_第四期制作教程_R31c/素材/03_结构/前刘海细链.png",
+    "eye": "/Volumes/Seagate/蕾姆语音AI模型/02_V2_第二版计划/42_场景_短片/果冻眼讲解视频/02_组图_v01/assets/原画_确认07.png"
+  },
+  "notes": "Actual artwork copied unchanged; 18s silent motion video scaled to 480px; eye from existing tutorial source, not represented as latest revision."
+}

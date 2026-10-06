@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>REM Lab · Cancan</title>
+  <meta name="description" content="Cancan 独立主导的角色智能个人实验室。围绕 Live2D、AI 语音与 AI 翻唱，探索虚拟角色表达，记录实验、评测与工程迭代。" />
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../../assets/home.css?v=98" />
+  <link rel="stylesheet" href="../../assets/lab.css?v=5" />
+  <link rel="stylesheet" href="../../assets/rem-cover.css?v=3" />
+</head>
+<body class="lab-page">
+  <header class="lab-nav"><a href="../../index.html#rem-lab">← 返回个人主页</a><span>CANCAN / INDEPENDENT RESEARCH</span></header>
+  <main class="lab-main">
+    <section class="lab-intro">
+      <div class="lab-intro-copy"><p class="lab-eyebrow">露格尼卡学院 · 独立课题组 <span class="lab-established">SINCE 2026.08</span></p><h1>REM <em>Lab</em></h1><p class="lab-acronym">Resonance · Embodiment · Multimodality</p><h2>角色智能与多模态表达实验室。</h2><p class="lab-lead">Cancan 任 REM Lab 独立课题组组长（PI）。课题组围绕 Live2D、AI 语音与 AI 翻唱开展研究，探索虚拟角色的动态表现、声音生成与多模态表达。</p><div class="lab-pi"><span>PRINCIPAL INVESTIGATOR</span><strong>Cancan · REM Lab PI</strong><p>负责研究选题、实验设计、工程实现与评测，把关于角色表达的想法转化为可运行、可复现的作品。</p></div><a class="lab-text-link" href="#research">查看研究方向 ↓</a></div>
+      <div class="lab-research-visual"><div class="research-cover" role="img" aria-label="REM Lab 三层研究封面：四角合成人头到完整发型模型、AI 语音波形、角色演唱场景">
+        <div class="rc-mast"><span>REM <em>Lab</em></span><span>CHARACTER RESEARCH<br />MOTION · VOICE · SINGING</span></div>
+        <div class="rc-layer rc-motion"><div class="rc-label"><span>01 / LIVE2D</span><b>从四角合成，到完整发型</b></div><div class="rc-models"><figure><div class="rc-specimen"><img src="../../assets/rem-cover/head-basis.png" alt="四角合成基础人头的正面视图" width="1400" height="1400" loading="lazy" /></div><figcaption>HEAD BASIS <span>四角合成人头</span></figcaption></figure><span class="rc-arrow" aria-hidden="true">⟶</span><figure><div class="rc-specimen"><img src="../../assets/rem-cover/hair-model.png" alt="叠加完整头发与头饰后的模型正面视图" width="1400" height="1400" loading="lazy" /></div><figcaption>HAIR ASSEMBLY <span>头发与头饰装配</span></figcaption></figure></div></div>
+        <div class="rc-layer rc-voice"><div class="rc-label"><span>02 / AI VOICE</span><b>让文字拥有角色的声音</b></div><div class="rc-signal"><div class="rc-input"><span>TEXT → SPEECH</span><strong>文 本 → 声 音</strong><small>GPT-SoVITS</small></div><img src="../../assets/rem-cover/voice-signal.svg" alt="项目现有角色配音片段的波形" width="400" height="80" loading="lazy" /></div></div>
+        <div class="rc-layer rc-singing"><div class="rc-label"><span>03 / AI SINGING</span><b>角色演唱</b></div><figure class="rc-performance"><img src="../../assets/rem-cover/singing-stage-original-no-title.svg" alt="角色演唱画面：蕾姆在前景持麦演唱，拉姆、昴与爱蜜莉雅在后排演奏" width="960" height="540" loading="lazy" /></figure></div>
+        <div class="rc-foot"><span>INDEPENDENT RESEARCH / CANCAN</span><span>MOTION / VOICE / PERFORMANCE</span></div>
+      </div></div>
+    </section>
+    <section class="lab-section" id="research"><div class="lab-section-head"><span>01 / RESEARCH</span><h2>三个方向，同一个角色。</h2></div><div class="lab-tracks">
+      <article><span class="lab-num">01</span><h3>Live2D</h3><p class="lab-track-en">Character motion</p><p>从分层原画到表情、口型与头发运动，研究角色在不同姿态下的形状一致性与动态表现。</p><dl><dt>已有工作</dt><dd>已有模型运行与口型时间轴基础，持续迭代眼部、转头和头发仿真。</dd><dt>继续验证</dt><dd>透视、遮挡、组合姿态与动作稳定性。</dd></dl></article>
+      <article><span class="lab-num">02</span><h3>AI 语音</h3><p class="lab-track-en">Character voice</p><p>围绕角色音色、语言和表达方式，构建从语料整理到语音合成、试听与版本比较的实验流程。</p><dl><dt>已有工作</dt><dd>基于 GPT-SoVITS 的角色语音与中文配音流程，已用于讲解旁白。</dd><dt>继续验证</dt><dd>音色一致性、发音自然度与长句稳定性。</dd></dl></article>
+      <article><span class="lab-num">03</span><h3>AI 翻唱</h3><p class="lab-track-en">Singing voice conversion</p><p>把人声分离、音色转换、逐句修整与混音串成可重复执行的工作流，以对照试听检验结果。</p><dl><dt>已有工作</dt><dd>基于公开 Seed-VC 的十步翻唱流程，已有整曲实践与制作教程。</dd><dt>继续验证</dt><dd>音准、咬字、断音与音色辨识度。</dd></dl></article>
+    </div></section>
+    <section class="lab-section"><div class="lab-section-head"><span>02 / METHOD</span><h2>把兴趣，做成可以复盘的研究。</h2></div><ol class="lab-method"><li><b>提出问题</b><p>将“更像角色”拆成声音、形状、运动与表达上的具体问题。</p></li><li><b>建立基线</b><p>固定输入、参考素材与版本，保留可重复运行的起点。</p></li><li><b>对照验证</b><p>用姿态检查、对齐试听和问题台账观察变化，记录失败。</p></li><li><b>沉淀结果</b><p>保存原始工程、实验记录与教程，明确已验证项和未解决项。</p></li></ol></section>
+    <section class="lab-section lab-admissions" id="join"><div class="lab-section-head"><span>03 / OPEN CALL</span><h2>现招收首批研究生。</h2></div><p class="lab-admissions-lead">露格尼卡学院 · REM Lab · 第一届招生</p><p>这里的“研究生”，研究的是自己喜欢的东西。欢迎对 Live2D、AI 语音或 AI 翻唱感兴趣的同学，自带好奇心和脑洞，一起把喜欢的角色做出来。</p><div class="lab-admissions-facts"><div><b>入学要求</b><p>有热爱，愿意动手，也愿意记录失败。</p></div><div><b>培养方式</b><p>自选课题，边玩边研究，以作品交流。</p></div><div><b>毕业标准</b><p>让脑洞跑起来，让角色多一分生命力。</p></div></div><a class="lab-text-link" href="mailto:cancansauce@163.com?subject=REM%20Lab">联系 PI，带上你的脑洞 ↗</a></section>
+    <section class="lab-note"><span>LAB MOTTO</span><p>兴趣入学，成果毕业。学院是自己开的，研究是认真做的。</p></section>
+  </main>
+  <footer class="lab-footer"><span>REM Lab / Cancan</span><a href="../../index.html#rem-lab">返回项目列表 ↗</a></footer>
+</body>
+</html>

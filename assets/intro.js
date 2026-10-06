@@ -63,11 +63,6 @@
     [{ opacity: 0, transform: 'translateY(40%)' }, { opacity: 1, transform: 'none' }],
     { duration: 700, delay: ms(HOLD + .2 + .05 * i), easing: OSMO, fill: 'backwards' }));
 
-  // Showreel: fades up from 30 % below with the reveal, 0.9 s.
-  document.querySelector('.showreel')?.animate(
-    [{ opacity: 0, transform: 'translateY(30%)' }, { opacity: 1, transform: 'none' }],
-    { duration: 900, delay: ms(HOLD), easing: OSMO, fill: 'backwards' });
-
   // Reveal: the curtain fades over 0.6 s and is removed; the page scrolls again.
   pre.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 600, delay: ms(HOLD), easing: 'cubic-bezier(.45,0,.55,1)', fill: 'forwards' })
     .finished.then(() => { pre.remove(); root.classList.remove('intro', 'intro-reveal'); history.scrollRestoration = 'auto'; });   // so Back returns to the same spot

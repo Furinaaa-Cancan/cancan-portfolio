@@ -104,12 +104,5 @@
     });
   });
 
-  // Hover: the recording plays only while it is shown.
-  document.querySelectorAll('.work-item').forEach(item => {
-    const v = item.querySelector('video');
-    if (!v) return;
-    const play = () => { v.preload = 'auto'; v.play().catch(() => {}); };
-    item.addEventListener('mouseenter', play); item.addEventListener('focus', play);
-    item.addEventListener('mouseleave', () => v.pause()); item.addEventListener('blur', () => v.pause());
-  });
+
 })();

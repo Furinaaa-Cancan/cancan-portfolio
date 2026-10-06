@@ -35,43 +35,8 @@ ul{list-style:none;padding:0}
 .hero h1{font-size:clamp(74px,9.25vw,160px);font-weight:700;line-height:1.04;letter-spacing:-.072em;white-space:nowrap}
 .hero h1 em{font-family:"Songti SC",STSong,"Noto Serif CJK SC",serif;font-size:1.02em;font-weight:400;font-style:italic;letter-spacing:-.077em}
 
-/* Showreel: the reference's full-width 16:10 film block right under the headline. */
-/* Never taller than the screen: the film's width follows the viewport height, so the whole 16:10 frame
-   always fits in one view (full width on tall screens, centred and a little narrower on short ones). */
-.showreel{position:relative;width:min(100%,calc((100svh - var(--edge)*2)*1.6));margin:clamp(14px,1.6vw,24px) auto 0;aspect-ratio:16/10;overflow:hidden;background:#000}
-.showreel video{display:block;width:100%;height:100%;object-fit:cover}
-.showreel{--pad:clamp(12px,1.6vw,24px);--pill:rgba(255,254,250,.86)}
-/* Controls: play · time + seek · sound in one row. They fade in while the pointer moves over the film
-   (or on tap / keyboard focus / pause) and fade out after 2 s of stillness, leaving the picture clean. */
-.showreel-bar{position:absolute;left:var(--pad);right:var(--pad);bottom:var(--pad);display:flex;align-items:center;gap:10px;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity .6s,transform .6s cubic-bezier(.625,.05,0,1)}
-.showreel.is-active .showreel-bar,.showreel:has(:focus-visible) .showreel-bar,.showreel.is-paused .showreel-bar,.showreel.is-scrubbing .showreel-bar,.showreel-bar:hover{opacity:1;pointer-events:auto;transform:none;transition-duration:.25s}
-.showreel.is-idle video{cursor:none}
-.showreel-bar button,.showreel-seek{height:44px;border:0;border-radius:22px;background:var(--pill);color:var(--ink);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
-.showreel-bar button{flex:none;cursor:pointer}
-.showreel-bar button:hover{background:#fffefa}
-.showreel-bar button:focus-visible,.showreel-seek:has(:focus-visible){outline:2px solid #2447a0;outline-offset:3px}
-.showreel-toggle{width:44px;display:grid;place-items:center}
-.showreel-toggle svg{width:18px;height:18px;fill:currentColor}
-.showreel .icon-play,.showreel.is-paused .icon-pause{display:none}
-.showreel.is-paused .icon-play{display:block}
-.showreel-seek{flex:1;min-width:0;display:flex;align-items:center;gap:12px;padding:0 18px;font:600 13px/1 Inter,Noto,sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
-.showreel-seek input{flex:1;min-width:0;height:24px;margin:0;background:none;cursor:pointer;-webkit-appearance:none;appearance:none}
-.showreel-seek input:focus{outline:none}
-.showreel-seek input::-webkit-slider-runnable-track{height:3px;border-radius:2px;background:linear-gradient(90deg,var(--ink) calc(var(--p,0)*100%),rgba(32,32,32,.18) 0)}
-.showreel-seek input::-moz-range-track{height:3px;border-radius:2px;background:linear-gradient(90deg,var(--ink) calc(var(--p,0)*100%),rgba(32,32,32,.18) 0)}
-.showreel-seek input::-webkit-slider-thumb{width:13px;height:13px;margin-top:-5px;border:0;border-radius:50%;background:var(--ink);-webkit-appearance:none;appearance:none;transition:transform .15s}
-.showreel-seek input::-moz-range-thumb{width:13px;height:13px;border:0;border-radius:50%;background:var(--ink)}
-.showreel-seek input:hover::-webkit-slider-thumb,.showreel-seek input:active::-webkit-slider-thumb{transform:scale(1.25)}
-.showreel-sound{display:flex;align-items:center;gap:8px;padding:0 16px 0 12px;font:600 14px/1 Inter,Noto,sans-serif;letter-spacing:-.01em}
-.showreel-sound svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.showreel-sound .speaker{fill:currentColor;stroke:none}
-.showreel-sound .waves,.showreel-sound[aria-pressed="true"] .cross{display:none}
-.showreel-sound[aria-pressed="true"] .waves{display:inline}
-@media(max-width:650px){.showreel-bar{gap:6px}.showreel-bar button,.showreel-seek{height:36px}.showreel-toggle{width:36px}.showreel-seek{gap:8px;padding:0 12px;font-size:11px}.showreel-sound{padding:0 10px}.showreel-sound span{display:none}}
-
 /* Selected work, after the reference's featured projects: a small label beside a large mixed statement,
-   then one row per project — a square picture on the left (drifts on scroll; on hover it darkens and
-   the product's screen recording fades in on top), year / name / View project on the right. */
+   then one row per project — a square picture on the left (drifts on scroll), year / name / View project on the right. */
 .work{width:calc(100% - var(--edge)*2);margin:0 var(--edge);padding:clamp(56px,6.5vw,110px) 0 clamp(56px,6.5vw,110px)}
 .work-title{display:grid;grid-template-columns:18% 1fr;align-items:start;margin-bottom:clamp(40px,5vw,84px)}
 .work-label{margin:.9em 0 0;font-size:clamp(13px,1.26vw,17px);font-weight:600;letter-spacing:-.01em}
@@ -80,13 +45,9 @@ ul{list-style:none;padding:0}
 .work-lead .word{display:inline-block;white-space:nowrap}
 .work-item{display:flex;padding-bottom:9px;border-bottom:1px solid #d9d9d9;color:inherit}
 .work-item:hover{color:inherit}
-.work-item+.work-item{margin-top:20px}
+.work-item+.work-item{margin-top:clamp(40px,5vw,80px)}
 .work-asset{position:relative;flex:none;width:50%;aspect-ratio:1;overflow:hidden;background:#e9e5da}
 .work-asset img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:translateY(calc(var(--drift,0)*1%)) scale(1.1);will-change:transform}
-.work-overlay{position:absolute;inset:0;background:rgba(0,0,0,.8);opacity:0}
-.work-asset video{position:absolute;left:50%;top:50%;width:83%;aspect-ratio:16/10;transform:translate(-50%,-50%);object-fit:cover;opacity:0}
-.work-overlay,.work-asset video{transition:opacity .5s cubic-bezier(.65,0,0,1)}
-.work-item:hover .work-overlay,.work-item:hover .work-asset video,.work-item:focus-visible .work-overlay,.work-item:focus-visible .work-asset video{opacity:1}
 .work-meta{flex:1;display:flex;flex-direction:column;gap:9px;padding:9px 0 0 clamp(9px,1.4vw,24px);min-width:0}
 .work-year,.work-more{font-size:clamp(13px,1.26vw,17px);font-weight:600;letter-spacing:-.01em}
 .work-year{color:var(--muted)}
@@ -229,3 +190,8 @@ html.intro:not(.intro-reveal){overflow:hidden}
   .hero h1{font-size:39px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* REM Lab shares the project-card typography and facts layout. */
+.work-lab .work-points{grid-template-columns:repeat(3,minmax(0,1fr))}
+.work-lab-name{margin:0;color:var(--muted);font-size:clamp(11px,1vw,14px);font-weight:500;line-height:1.5}
+@media(max-width:380px){.work-lab .work-points{grid-template-columns:1fr 1fr}}
