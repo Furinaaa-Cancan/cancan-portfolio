@@ -32,8 +32,10 @@ ul{list-style:none;padding:0}
 .site-header .header-contact{display:block;margin:0;gap:0;font-size:clamp(18px,1.8vw,25px)}
 
 .hero{width:calc(100% - var(--edge)*2);margin:0 var(--edge)}
-.hero h1{font-size:clamp(38px,5.3vw,92px);font-weight:700;line-height:1.12;letter-spacing:-.055em;white-space:nowrap}
+.hero h1{font-size:clamp(30px,4.4vw,76px);font-weight:700;line-height:1.16;letter-spacing:-.045em;white-space:nowrap}
 .hero h1 em{display:inline-block;margin:0 .03em;font-family:Georgia,"Times New Roman",serif;font-size:1.02em;font-weight:400;font-style:italic;letter-spacing:-.045em;white-space:nowrap}
+.hero-attribution{margin-top:24px;color:var(--muted);font-size:clamp(12px,1.05vw,15px);line-height:1.6}
+.hero-attribution a:hover{color:var(--ink)}
 
 /* Profile beneath the opening statement, aligned with the section-label grid. */
 .personal-bio{display:grid;grid-template-columns:18% minmax(0,1fr);margin-top:clamp(40px,5vw,80px);padding-top:clamp(22px,2.5vw,36px);border-top:1px solid #d9d9d9}
@@ -153,7 +155,7 @@ html.intro:not(.intro-reveal){overflow:hidden}
   .header-work{grid-column:1;grid-row:2}
   .header-contact{grid-column:2;grid-row:2}
   .hero{margin-top:90px}
-  .hero h1{font-size:5.3vw}
+  .hero h1{font-size:4.4vw}
 }
 @media(max-width:650px){
   :root{--edge:18px}
