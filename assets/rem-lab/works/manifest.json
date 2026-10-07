@@ -41,5 +41,14 @@
       "height": 1086,
       "sha256": "1026f4a40a47077aea3997ed2f0fc12f297a96505c41a1d18971b6efcf70bd9f"
     }
+  ],
+  "independent_works": [
+    {
+      "title": "3D 互动冷饮工坊",
+      "filename": "cold-drinks.png",
+      "width": 1448,
+      "height": 1086,
+      "sha256": "ed1281bb203a497212a06ad6cc6c0414097bac7c1ba6e26622641aff4cc3c6a7"
+    }
   ]
 }
