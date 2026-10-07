@@ -105,4 +105,28 @@
   });
 
 
+  // Keep playback and the floating preview in sync; touch taps still open the project.
+  document.querySelectorAll('.work-item').forEach(item => {
+    const video = item.querySelector('.work-preview');
+    if (!video) return;
+    let hovered = false;
+    const sync = () => {
+      const visible = !document.hidden && (hovered || item.matches(':focus-visible'));
+      item.classList.toggle('is-preview', visible);
+      if (visible) video.play().catch(() => {});
+      else video.pause();
+    };
+    item.addEventListener('pointerenter', event => {
+      if (event.pointerType !== 'mouse' && event.pointerType !== 'pen') return;
+      hovered = true; sync();
+    });
+    item.addEventListener('pointerleave', () => { hovered = false; sync(); });
+    item.addEventListener('focus', sync);
+    item.addEventListener('blur', sync);
+    document.addEventListener('visibilitychange', () => { hovered = false; sync(); });
+    new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) { hovered = false; item.classList.remove('is-preview'); video.pause(); }
+    }).observe(item);
+  });
+
 })();
