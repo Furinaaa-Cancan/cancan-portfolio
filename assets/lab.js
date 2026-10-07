@@ -33,15 +33,15 @@
     });
   }
 
-  const links = [...document.querySelectorAll('[data-section]')];
-  const sections = links.map(link => document.getElementById(link.dataset.section)).filter(Boolean);
+  const links = [...document.querySelectorAll('[data-section], #contents nav a')];
+  const sections = [...document.querySelectorAll('#overview, .study, #practice, #people, #join')];
   let pending = false;
   const updateIndex = () => {
     pending = false;
     const threshold = Math.min(window.innerHeight * .35, 240);
     const active = sections.filter(section => section.getBoundingClientRect().top <= threshold).at(-1);
     links.forEach(link => {
-      if (active && link.dataset.section === active.id) link.setAttribute('aria-current', 'location');
+      if (active && link.hash === `#${active.id}`) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');
     });
   };
@@ -50,5 +50,7 @@
   };
   window.addEventListener('scroll', schedule, { passive: true });
   window.addEventListener('resize', schedule, { passive: true });
+  window.addEventListener('pageshow', schedule);
+  document.fonts.ready.then(schedule);
   updateIndex();
 })();
