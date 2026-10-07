@@ -34,6 +34,8 @@ ul{list-style:none;padding:0}
 .hero{width:calc(100% - var(--edge)*2);margin:0 var(--edge)}
 .hero h1{font-size:clamp(74px,9.25vw,160px);font-weight:700;line-height:1.04;letter-spacing:-.072em;white-space:nowrap}
 .hero h1 em{font-family:"Songti SC",STSong,"Noto Serif CJK SC",serif;font-size:1.02em;font-weight:400;font-style:italic;letter-spacing:-.077em}
+.hero h1 .hero-agent{position:relative;display:inline-block;font-weight:700}
+.hero h1 .hero-agent::after{content:"";position:absolute;left:0;right:0;bottom:0;height:.035em;background:currentColor}
 
 /* Profile beneath the opening statement, aligned with the section-label grid. */
 .personal-bio{display:grid;grid-template-columns:18% minmax(0,1fr);margin-top:clamp(40px,5vw,80px);padding-top:clamp(22px,2.5vw,36px);border-top:1px solid #d9d9d9}
