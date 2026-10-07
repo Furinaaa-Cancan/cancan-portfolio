@@ -34,7 +34,7 @@ ul{list-style:none;padding:0}
 .hero{width:calc(100% - var(--edge)*2);margin:0 var(--edge)}
 .hero h1{font-size:clamp(30px,4.4vw,76px);font-weight:700;line-height:1.16;letter-spacing:-.045em;white-space:nowrap}
 .hero h1 em{display:inline-block;margin:0 .03em;font-family:Georgia,"Times New Roman",serif;font-size:1.02em;font-weight:400;font-style:italic;letter-spacing:-.045em;white-space:nowrap}
-.hero-attribution{margin-top:24px;color:var(--muted);font-size:clamp(12px,1.05vw,15px);line-height:1.6}
+.hero-attribution{margin-top:24px;color:var(--muted);font-size:clamp(12px,1.05vw,15px);line-height:1.6;text-align:right}
 .hero-attribution a:hover{color:var(--ink)}
 
 /* Profile beneath the opening statement, aligned with the section-label grid. */
