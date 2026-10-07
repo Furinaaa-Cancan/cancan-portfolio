@@ -32,20 +32,19 @@ ul{list-style:none;padding:0}
 .site-header .header-contact{display:block;margin:0;gap:0;font-size:clamp(18px,1.8vw,25px)}
 
 .hero{width:calc(100% - var(--edge)*2);margin:0 var(--edge)}
-.hero h1{font-size:clamp(74px,9.25vw,160px);font-weight:700;line-height:1.04;letter-spacing:-.072em;white-space:nowrap}
+.hero h1{font-size:clamp(74px,9.25vw,160px);font-weight:700;line-height:1.15;letter-spacing:-.072em;white-space:nowrap}
 .hero h1 em{font-family:"Songti SC",STSong,"Noto Serif CJK SC",serif;font-size:1.02em;font-weight:400;font-style:italic;letter-spacing:-.077em}
-.hero h1 .hero-agent{position:relative;display:inline-block;font-weight:700}
-.hero h1 .hero-agent::after{content:"";position:absolute;left:0;right:0;bottom:0;height:.035em;background:currentColor}
+.hero h1 .hero-agent{position:relative;display:inline-block;margin:0 .08em 0 .03em;font-family:Georgia,"Times New Roman",serif;font-size:.94em;font-weight:700;letter-spacing:-.055em}
+.hero h1 .hero-agent::after{content:"";position:absolute;left:.02em;right:.02em;bottom:.045em;height:clamp(1px,.012em,2px);background:currentColor;opacity:.5}
+.hero h1 .hero-expression{margin-left:.04em;letter-spacing:-.065em}
 
 /* Profile beneath the opening statement, aligned with the section-label grid. */
 .personal-bio{display:grid;grid-template-columns:18% minmax(0,1fr);margin-top:clamp(40px,5vw,80px);padding-top:clamp(22px,2.5vw,36px);border-top:1px solid #d9d9d9}
-.personal-bio h2{margin:.25em 0 0;font-size:16px;font-weight:700;line-height:1.6}
-.personal-bio h2 span{display:block;margin-top:5px;color:var(--muted);font-size:11px;font-weight:500;letter-spacing:.12em}
 .personal-bio-copy{max-width:56em;font-size:clamp(16px,1.35vw,20px);line-height:1.9;color:#4a4a4a}
 .personal-bio-copy p+p{margin-top:1em}
 .personal-bio-copy .personal-bio-lead{color:var(--ink);font-weight:700}
 .personal-bio-copy a{text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
-@media(max-width:650px){.personal-bio{grid-template-columns:1fr;gap:20px}.personal-bio h2 span{display:inline;margin-left:12px}}
+@media(max-width:650px){.personal-bio{grid-template-columns:1fr;gap:20px}}
 
 /* Selected work, after the reference's featured projects: a small label beside a large mixed statement,
    then one row per project — a square picture on the left (drifts on scroll), year / name / View project on the right. */
@@ -171,8 +170,7 @@ html.intro:not(.intro-reveal){overflow:hidden}
   .header-identity>p{margin-top:10px;font-size:clamp(27px,7vw,34px)}
   .site-name{font-size:22px}
   .hero{margin-top:80px}
-  .hero h1{font-size:clamp(39px,9vw,60px);line-height:1.09;white-space:normal}
-  .hero h1 br{display:none}
+  .hero h1{font-size:clamp(28px,8.5vw,55px);line-height:1.2;white-space:normal}
   .site-footer{flex-wrap:wrap;gap:10px 20px}
   .work-title{grid-template-columns:1fr;gap:14px}
   .work-label{margin:0}
@@ -199,7 +197,6 @@ html.intro:not(.intro-reveal){overflow:hidden}
 @media(max-width:380px){
   :root{--edge:14px}
   .header-cell,.site-header .header-contact{font-size:14px}
-  .hero h1{font-size:39px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
