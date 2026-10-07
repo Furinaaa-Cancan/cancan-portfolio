@@ -16,7 +16,7 @@
 .lab-art-motion .lab-art-label{left:5%;top:23%}
 .lab-art-motion .lab-art-label small{max-width:20cqw;line-height:1.6}
 .work-asset.lab-art .lab-embodiment-scene{inset:0 0 auto;width:100%;height:40%;object-fit:cover;transform:none;will-change:auto}
-.work-asset.lab-art .lab-model-character{inset:auto;right:4%;top:0;width:41%;height:35%;object-fit:contain;object-position:center bottom;transform:none;will-change:auto;z-index:1}
+.work-asset.lab-art .lab-model-character{inset:auto;right:9%;top:-.8%;width:48%;height:38%;object-fit:contain;object-position:center bottom;transform:none;will-change:auto;z-index:1}
 
 .lab-art-voice{background:#becaa9;clip-path:polygon(0 41%,100% 33%,100% 59%,0 71%)}
 .work-asset.lab-art .lab-art-voice-scene{inset:33% 0 auto;width:100%;height:40%;object-fit:cover;transform:none;will-change:auto}
