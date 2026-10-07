@@ -1,0 +1,45 @@
+{
+  "collection": "REM Lab / How to",
+  "episodes": [
+    {
+      "episode": 1,
+      "title": "Live2D 虚拟角色",
+      "filename": "01-character.png",
+      "width": 1447,
+      "height": 1087,
+      "sha256": "248925726ab2191c09a97d70a4f19d347ff982ae1c35542bfa09384b15188e45"
+    },
+    {
+      "episode": 2,
+      "title": "Live2D 果冻眼",
+      "filename": "02-jelly-eyes.png",
+      "width": 1447,
+      "height": 1087,
+      "sha256": "bae8ef2d676c83ad50a22368eb03977af06e07dcda5f54e100bb4635b460d75a"
+    },
+    {
+      "episode": 3,
+      "title": "Live2D 四角合成",
+      "filename": "03-four-corners.png",
+      "width": 1448,
+      "height": 1086,
+      "sha256": "42a517c13773cbbc8f6ddcd433b8ba780d6d53fce3a654a680244601de8bc51c"
+    },
+    {
+      "episode": 4,
+      "title": "Live2D 完整头发",
+      "filename": "04-hair.png",
+      "width": 1448,
+      "height": 1086,
+      "sha256": "3e92bbd140f2c0f28c760290886962c036327c0a8dda64e863f66655c5787f51"
+    },
+    {
+      "episode": 5,
+      "title": "AI 翻唱",
+      "filename": "05-singing.png",
+      "width": 1448,
+      "height": 1086,
+      "sha256": "1026f4a40a47077aea3997ed2f0fc12f297a96505c41a1d18971b6efcf70bd9f"
+    }
+  ]
+}

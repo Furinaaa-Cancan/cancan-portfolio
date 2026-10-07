@@ -34,7 +34,7 @@
   }
 
   const links = [...document.querySelectorAll('[data-section], #contents nav a')];
-  const sections = [...document.querySelectorAll('#overview, .study, #practice, #people, #join')];
+  const sections = [...document.querySelectorAll('#overview, #works, .study, #practice, #people, #join')];
   let pending = false;
   const updateIndex = () => {
     pending = false;
