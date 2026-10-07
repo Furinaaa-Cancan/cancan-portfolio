@@ -25,17 +25,31 @@
 @media(max-width:360px){.masthead{grid-template-columns:repeat(2,minmax(0,1fr))}.masthead>span:nth-child(1),.masthead>span:nth-child(2){font-size:20vw}.masthead>span:nth-child(3),.masthead>span:nth-child(4){font-size:8.6vw}.study-title{grid-template-columns:1fr auto;gap:10px}.study-title>p{grid-column:1;grid-row:2}.study-title>span{grid-column:2;grid-row:1;align-self:center}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 
-/* Academy statement: a reading note and three principles, within the chapter grid. */
+/* Academy: a manifesto spread, three columns, and a literary endnote. */
 .academy{padding:12px 0 98px;scroll-margin-top:0}
-.academy-name{color:var(--muted);margin:32px 0 20px}
-.academy-intro{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);padding-bottom:38px}
-.academy-intro h3{font-size:clamp(25px,2.8vw,42px);font-weight:500;line-height:1.55;letter-spacing:-.04em}
-.academy-intro p{font-size:14px;line-height:1.95}
-.academy-intro p+p{margin-top:16px}
-.academy-principles{border-bottom:1px solid var(--line)}
-.academy-reading{display:grid;grid-template-columns:1fr 2fr;gap:var(--gap);padding-top:20px;color:var(--muted);font-size:10px;line-height:1.8}
-.academy-reading>span{letter-spacing:.06em}
-.academy-reading a{text-decoration:underline;text-underline-offset:3px}
-.mast-pre a:hover,.academy-reading a:hover{color:#60758a}
-@media(min-width:1700px){.academy-intro p{font-size:17px}.academy-reading{font-size:12px}}
-@media(max-width:700px){.academy{padding:0 0 64px}.academy-name{margin:26px 0 18px}.academy-intro{grid-template-columns:1fr;gap:22px;padding-bottom:28px}.academy-intro h3{font-size:30px}.academy-intro p{font-size:14px}.academy-reading{grid-template-columns:1fr;gap:8px}}
+.academy>.study-title{margin-bottom:28px}
+.academy-manifesto{padding:34px 40px 25px;background:#303c35;color:#f6f3e9}
+.academy-eyebrow{display:block;font-size:10px;letter-spacing:.12em;line-height:1.6}
+.academy-manifesto>.academy-eyebrow{color:#b8c3b5}
+.academy-manifesto h3{font-size:clamp(30px,3.65vw,58px);font-weight:500;line-height:1.4;letter-spacing:-.045em;margin:34px 0 24px}
+.academy-deck{font-size:14px;line-height:1.95;color:#d6dcd1}
+.academy-fields{display:flex;justify-content:space-between;gap:16px;border-top:1px solid #677367;margin-top:34px;padding-top:17px;font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:19px;color:#c8d4c1}
+.academy-principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;padding:36px 0 38px;margin:0;gap:0}
+.academy-principles li{padding:0 24px;border-left:1px solid var(--line)}
+.academy-principles li:first-child{padding-left:0;border-left:0}
+.academy-principles li:last-child{padding-right:0}
+.principle-label{display:flex;gap:14px;font-size:9px;letter-spacing:.08em;color:var(--muted);margin-bottom:23px}
+.principle-label span{color:var(--ink)}
+.academy-principles h3{font-size:20px;font-weight:500;letter-spacing:-.035em;line-height:1.5;margin-bottom:14px}
+.academy-principles li>p:last-child{font-size:13px;line-height:1.95;color:#565b53}
+.academy-reading{display:grid;grid-template-columns:1fr 1.5fr;gap:36px;border-top:1px solid var(--ink);padding:28px 0 0}
+.academy-book>.academy-eyebrow{color:var(--muted);font-size:9px}
+.academy-book>p{font-family:Georgia,"Times New Roman",serif;font-size:36px;line-height:1.08;letter-spacing:-.035em;margin:17px 0 14px}
+.academy-book>span:last-child{font-size:10px;color:var(--muted)}
+.academy-reading-copy>p{font-size:13px;line-height:1.95}
+.academy-reading-copy>.academy-source{font-size:10px;color:var(--muted);margin-top:16px}
+.academy-reading-copy>a{display:inline-flex;gap:20px;margin-top:10px;font-size:11px;border-bottom:1px solid var(--line);padding-bottom:3px}
+.mast-pre a:hover,.academy-reading-copy>a:hover{color:#60758a}
+@media(min-width:1700px){.academy-deck{font-size:17px}.academy-principles h3{font-size:25px}.academy-principles li>p:last-child,.academy-reading-copy>p{font-size:16px}}
+@media(max-width:1000px){.academy-manifesto{padding:28px}.academy-principles li{padding:0 16px}.academy-principles h3{font-size:18px}.academy-reading{gap:24px}}
+@media(max-width:700px){.academy{padding:0 0 64px}.academy>.study-title{margin-bottom:22px}.academy-manifesto{padding:26px 22px 20px}.academy-manifesto h3{font-size:clamp(25px,7.3vw,40px);margin:28px 0 20px;line-height:1.5}.academy-deck{font-size:13px}.academy-wide-break{display:none}.academy-fields{font-size:17px;margin-top:28px;padding-top:15px}.academy-principles{grid-template-columns:1fr;padding:8px 0 0}.academy-principles li,.academy-principles li:first-child,.academy-principles li:last-child{padding:26px 0;border-left:0;border-bottom:1px solid var(--line)}.academy-principles li:last-child{border-bottom:0}.principle-label{margin-bottom:12px}.academy-principles h3{font-size:22px;margin-bottom:10px}.academy-principles li>p:last-child{font-size:14px}.academy-reading{grid-template-columns:1fr;gap:25px;padding-top:26px}.academy-book>p{font-size:36px}.academy-reading-copy>p{font-size:14px}}
