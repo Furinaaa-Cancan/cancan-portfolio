@@ -64,7 +64,7 @@ REM Lab 欢迎因热爱而来的**实习生、研究生及研究协作者（Coll
 
 ## About This Repository
 
-本仓库维护个人网站的页面、样式、交互与展示素材，使用原生 HTML、CSS 和 JavaScript 构建，通过 GitHub Pages 发布。
+本仓库维护个人网站的页面、样式、交互与展示素材，使用原生 HTML、CSS 和 JavaScript 构建。HTML 页面通过 GitHub Pages 发布，图片、视频、字体、CSS 和 JavaScript 均由阿里云 OSS 提供。资源更新流程见 [OSS 部署说明](tools/OSS_DEPLOY.md)。
 
 | 路径 | 内容 |
 | --- | --- |

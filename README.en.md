@@ -64,7 +64,7 @@ Tell us about your background, your interests, and what you would like to build 
 
 ## About This Repository
 
-This repository contains the pages, styles, interactions, and presentation assets for my personal website. It is built with plain HTML, CSS, and JavaScript, and published through GitHub Pages.
+This repository contains the pages, styles, interactions, and presentation assets for my personal website. It is built with plain HTML, CSS, and JavaScript. HTML pages are published through GitHub Pages; images, videos, fonts, CSS, and JavaScript are served from Alibaba Cloud OSS. See the [OSS deployment guide](tools/OSS_DEPLOY.md) for asset updates.
 
 | Path | Contents |
 | --- | --- |

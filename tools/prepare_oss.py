@@ -100,7 +100,11 @@ def prepare(output):
 
             def replace_url(url):
                 asset = local_asset(url, path.parent)
-                return f'{ORIGIN}/{prefix}/{asset}' if asset else url
+                if not asset:
+                    return url
+                parsed = urlsplit(url)
+                suffix = ('?' + parsed.query if parsed.query else '') + ('#' + parsed.fragment if parsed.fragment else '')
+                return f'{ORIGIN}/{prefix}/{asset}{suffix}'
 
             if key == 'srcset':
                 value = ', '.join(' '.join([replace_url(parts[0]), *parts[1:]])
