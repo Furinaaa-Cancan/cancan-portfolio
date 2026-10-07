@@ -39,7 +39,7 @@ ul{list-style:none;padding:0}
 
 /* Profile beneath the opening statement, aligned with the section-label grid. */
 .personal-bio{display:grid;grid-template-columns:18% minmax(0,1fr);margin-top:clamp(40px,5vw,80px);padding-top:clamp(22px,2.5vw,36px);border-top:1px solid #d9d9d9}
-.personal-bio-copy{max-width:56em;font-size:clamp(16px,1.35vw,20px);line-height:1.9;color:#4a4a4a}
+.personal-bio-copy{max-width:56em;font-size:clamp(18px,1.5vw,22px);line-height:1.9;color:#4a4a4a}
 .personal-bio-copy p+p{margin-top:1em}
 .personal-bio-copy .personal-bio-lead{color:var(--ink);font-weight:700}
 .personal-bio-copy a{text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
