@@ -481,8 +481,9 @@ main { max-width: var(--w); margin: 0 auto; padding: 0 var(--gutter); }
 .mnav input:checked + .nav-item .idx, .mnav input:checked + .nav-item svg { color: var(--accent); }
 .mnav input:focus-visible + .nav-item { outline: 2px solid var(--accent); outline-offset: -2px; }
 
-.mglass { position: relative; min-width: 0; overflow: hidden; isolation: isolate; padding: 30px 34px 28px 32px; }
-.pane { position: relative; display: none; grid-template-columns: minmax(0, 1fr) 224px; gap: 32px; align-items: center; height: 100%; animation: rise .4s cubic-bezier(.2, .7, .2, 1) both; }
+.mglass { display: grid; position: relative; min-width: 0; overflow: hidden; isolation: isolate; padding: 30px 34px 28px 32px; }
+/* Overlap the panels in one grid cell so the tallest content sets a stable height. */
+.pane { position: relative; display: grid; grid-area: 1 / 1; visibility: hidden; pointer-events: none; grid-template-columns: minmax(0, 1fr) 224px; gap: 32px; align-items: center; }
 .pane::before {
   content: ""; position: absolute; z-index: -1; right: -90px; top: 50%; width: 420px; height: 420px; transform: translateY(-50%);
   background: var(--art) center / contain no-repeat; filter: blur(56px); opacity: .13; pointer-events: none;
@@ -495,7 +496,7 @@ main { max-width: var(--w); margin: 0 auto; padding: 0 var(--gutter); }
 .pane[data-for="m6"] { --art: url("modules/multi.webp"); }
 .pane[data-for="m7"] { --art: url("modules/sec.webp"); }
 .pane[data-for="m8"] { --art: url("modules/deploy.webp"); }
-.pane-text { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.pane-text { align-self: start; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
 .pane-art { display: block; width: 224px; height: 224px; justify-self: end; filter: drop-shadow(0 14px 22px rgba(40, 32, 20, .2)); }
 .pane-art img { display: block; width: 100%; height: 100%; object-fit: contain; }
 /* index on the left, name over subtitle on the right: every module's title block is the same height, however long the name */
@@ -513,7 +514,7 @@ main { max-width: var(--w); margin: 0 auto; padding: 0 var(--gutter); }
 .spec .tech dd { display: flex; flex-wrap: wrap; gap: 5px; }
 .spec .tech span { font-family: var(--mono); font-size: 10.5px; line-height: 1.4; letter-spacing: .02em; color: var(--ink-2); padding: 2px 8px; border-radius: 999px; border: 1px solid rgba(22, 21, 15, .14); background: rgba(255, 255, 255, .6); }
 .mdl:has(#m1:checked) .pane[data-for="m1"], .mdl:has(#m2:checked) .pane[data-for="m2"], .mdl:has(#m3:checked) .pane[data-for="m3"], .mdl:has(#m4:checked) .pane[data-for="m4"],
-.mdl:has(#m5:checked) .pane[data-for="m5"], .mdl:has(#m6:checked) .pane[data-for="m6"], .mdl:has(#m7:checked) .pane[data-for="m7"], .mdl:has(#m8:checked) .pane[data-for="m8"] { display: grid; }
+.mdl:has(#m5:checked) .pane[data-for="m5"], .mdl:has(#m6:checked) .pane[data-for="m6"], .mdl:has(#m7:checked) .pane[data-for="m7"], .mdl:has(#m8:checked) .pane[data-for="m8"] { visibility: visible; pointer-events: auto; }
 @supports (animation-timeline: view()) {
   .role-row { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 35%; }
 }
@@ -526,7 +527,7 @@ main { max-width: var(--w); margin: 0 auto; padding: 0 var(--gutter); }
   .nav-item { flex: none; grid-template-columns: 16px auto; padding: 7px 11px; }
   .nav-item .idx, .nav-item::before { display: none; }
   .mglass { padding: 20px 18px 18px; }
-  .pane { grid-template-columns: 1fr; gap: 14px; }
+  .pane { grid-template-columns: 1fr; grid-template-rows: 132px 1fr; gap: 14px; }
   .pane::before { right: -120px; top: 0; transform: none; }
   .pane-art { order: -1; width: 132px; height: 132px; justify-self: start; }
 }
