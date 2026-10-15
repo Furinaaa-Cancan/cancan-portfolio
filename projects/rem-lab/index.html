@@ -9,10 +9,12 @@
   <link rel="stylesheet" href="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/lab.css" />
   <script src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/lab.js" defer></script>
   <link rel="preconnect" href="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com" crossorigin />
+  <link rel="stylesheet" href="../../assets/image-viewer.css" />
+  <script src="../../assets/image-viewer.js" defer></script>
   <style>
     .work-new{display:inline-block;margin-left:8px;color:#3f6352;font-size:9px;letter-spacing:.08em}
-    a.work-cover{cursor:zoom-in;transition:opacity .2s}
-    a.work-cover:hover{opacity:.88}
+    button.work-cover{cursor:zoom-in;transition:opacity .2s}
+    button.work-cover:hover{opacity:.88}
     .workshop-feature{display:grid;grid-template-columns:1fr 2fr;gap:var(--gap);border-top:1px solid var(--line);margin-top:48px;padding-top:30px;align-items:center}
     #rain-love .work-cover{aspect-ratio:16/9}
     .workshop-copy{padding:0 clamp(0px,3vw,48px)}
@@ -75,7 +77,7 @@
             <h3>AI 翻唱</h3><p>分轨 · 换声 · 混音</p>
           </article>
           <article class="work-card" id="episode-06">
-            <a class="work-cover" href="../../assets/rem-lab/works/06-body-motion.png" target="_blank" rel="noopener" aria-label="查看第六期身体联动封面原图（新标签页）"><img src="../../assets/rem-lab/works/06-body-motion.png" alt="第六期封面：用 Codex 制作 Live2D 身体联动，辅助线 · 体积 · 透视。" width="1448" height="1086" loading="lazy" /></a>
+            <button type="button" class="work-cover" data-image="../../assets/rem-lab/works/06-body-motion.png" aria-label="放大查看第六期身体联动封面原图"><img src="../../assets/rem-lab/works/06-body-motion.png" alt="第六期封面：用 Codex 制作 Live2D 身体联动，辅助线 · 体积 · 透视。" width="1448" height="1086" loading="lazy" /></button>
             <div class="work-meta"><span>第六期 <span class="work-new">NEW</span></span><span>EP. 06</span></div>
             <h3>Live2D 身体联动</h3><p>辅助线 · 体积 · 透视</p>
           </article>
@@ -87,7 +89,7 @@
             <p class="workshop-note">系列之外，继续探索角色与空间的互动。</p></div>
       </article>
       <article class="work-card workshop-feature" id="rain-love">
-            <a class="work-cover" href="../../assets/rem-lab/works/rain-love.png" target="_blank" rel="noopener" aria-label="查看雨爱四人乐队封面原图（新标签页）"><img src="../../assets/rem-lab/works/rain-love.png" alt="雨爱视频封面：蓝紫色舞台上，蕾姆持麦演唱，拉姆弹贝斯、艾米莉亚弹键盘、昴打鼓。" width="1920" height="1080" loading="lazy" /></a>
+            <button type="button" class="work-cover" data-image="../../assets/rem-lab/works/rain-love.png" aria-label="放大查看雨爱四人乐队封面原图"><img src="../../assets/rem-lab/works/rain-love.png" alt="雨爱视频封面：蓝紫色舞台上，蕾姆持麦演唱，拉姆弹贝斯、艾米莉亚弹键盘、昴打鼓。" width="1920" height="1080" loading="lazy" /></button>
             <div class="workshop-copy"><div class="work-meta"><span>音乐作品</span><span>AI COVER / 雨爱</span></div>
             <h3>雨爱 · 蕾姆与伙伴</h3><p>AI 翻唱 · 四人乐队</p>
             <p class="workshop-note">让角色的声音，在舞台上相遇。</p></div>
@@ -99,21 +101,21 @@
       <div class="research-body">
         <article class="study" id="motion" aria-labelledby="motion-title">
           <header class="study-title"><h2 id="motion-title">Live2D</h2><p>纯 AI 制作</p><span>01</span></header>
-          <figure class="study-plate"><a class="scene scene-motion" href="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/motion-scene-v4.png" target="_blank" rel="noopener" aria-label="查看 Live2D 场景插画大图（新标签页）"><img src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/motion-scene-v4.png" alt="纸感场景插画：蕾姆在配有银色 Mac mini 与苹果大显示器的工作台前制作角色动作，桌上摆着键盘与触控板。" width="1672" height="941" loading="lazy" /></a><figcaption><span>纯 AI 制作 · 角色建模与动态表达</span><a href="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/motion-scene-v4.png" target="_blank" rel="noopener" aria-label="查看 Live2D 场景插画大图（新标签页）">VIEW IMAGE ↗</a></figcaption></figure>
+          <figure class="study-plate"><button type="button" class="scene scene-motion" data-image="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/motion-scene-v4.png" aria-label="放大查看 Live2D 场景插画大图"><img src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/motion-scene-v4.png" alt="纸感场景插画：蕾姆在配有银色 Mac mini 与苹果大显示器的工作台前制作角色动作，桌上摆着键盘与触控板。" width="1672" height="941" loading="lazy" /></button><figcaption><span>纯 AI 制作 · 角色建模与动态表达</span><button type="button" data-image="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/motion-scene-v4.png" aria-label="放大查看 Live2D 场景插画大图">VIEW IMAGE ＋</button></figcaption></figure>
           <div class="study-text"><h3>从静态形象，<br />到有回应的角色。</h3><div><p>以纯 AI 制作为方法，用 Codex 从零推进原画、建模与动态实现。围绕分层原画、表情口型与头发运动，持续验证角色的形体一致性与动态表现。</p><dl><div><dt>已有工作</dt><dd>模型运行与口型时间轴；持续迭代转头、表情与头发仿真。</dd></div><div><dt>继续验证</dt><dd>透视与遮挡、组合姿态，以及动作的连续性与稳定性。</dd></div></dl></div></div>
           <p class="study-foot"><span>RESEARCH FOCUS</span>分层原画 / 表情口型 / 动态仿真</p>
         </article>
 
         <article class="study" id="voice" aria-labelledby="voice-title">
           <header class="study-title"><h2 id="voice-title">AI Voice</h2><p>Resonance</p><span>02</span></header>
-          <figure class="study-plate"><a class="scene scene-voice" href="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/voice-scene-v2.png" target="_blank" rel="noopener" aria-label="查看 AI 语音 场景插画大图（新标签页）"><img src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/voice-scene-v2.png" alt="纸感场景插画：蕾姆在录音间里对着麦克风读稿，隔窗可见录音设备与波形显示屏。" width="1672" height="941" loading="lazy" /></a><figcaption><span>角色声音与语言表达</span><a href="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/voice-scene-v2.png" target="_blank" rel="noopener" aria-label="查看 AI 语音 场景插画大图（新标签页）">VIEW IMAGE ↗</a></figcaption></figure>
+          <figure class="study-plate"><button type="button" class="scene scene-voice" data-image="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/voice-scene-v2.png" aria-label="放大查看 AI 语音 场景插画大图"><img src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/voice-scene-v2.png" alt="纸感场景插画：蕾姆在录音间里对着麦克风读稿，隔窗可见录音设备与波形显示屏。" width="1672" height="941" loading="lazy" /></button><figcaption><span>角色声音与语言表达</span><button type="button" data-image="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/voice-scene-v2.png" aria-label="放大查看 AI 语音 场景插画大图">VIEW IMAGE ＋</button></figcaption></figure>
           <div class="study-text"><h3>让文字，<br />带上角色的声音。</h3><div><p>从语料整理到合成、试听与版本比较，探索角色音色、语言与表达方式之间的联系。</p><dl><div><dt>已有工作</dt><dd>基于 GPT-SoVITS 的角色语音与中文配音流程，已用于讲解旁白。</dd></div><div><dt>继续验证</dt><dd>音色一致性、发音自然度、多语言表达与长句稳定性。</dd></div></dl></div></div>
           <p class="study-foot"><span>RESEARCH FOCUS</span>语料构建 / 语音合成 / 对照试听</p>
         </article>
 
         <article class="study" id="singing" aria-labelledby="singing-title">
           <header class="study-title"><h2 id="singing-title">AI Singing</h2><p>Musicality</p><span>03</span></header>
-          <figure class="study-plate"><a class="scene scene-singing" href="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/singing-scene-v3.png" target="_blank" rel="noopener" aria-label="查看 AI 翻唱 场景插画大图（新标签页）"><img src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/singing-scene-v3.png" alt="纸感场景插画：蕾姆在两束柔和灯光下持麦演唱，背景是简洁的蓝色舞台与米色圆台。" width="1672" height="941" loading="lazy" /></a><figcaption><span>歌声转换与音乐表达</span><a href="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/singing-scene-v3.png" target="_blank" rel="noopener" aria-label="查看 AI 翻唱 场景插画大图（新标签页）">VIEW IMAGE ↗</a></figcaption></figure>
+          <figure class="study-plate"><button type="button" class="scene scene-singing" data-image="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/singing-scene-v3.png" aria-label="放大查看 AI 翻唱 场景插画大图"><img src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/singing-scene-v3.png" alt="纸感场景插画：蕾姆在两束柔和灯光下持麦演唱，背景是简洁的蓝色舞台与米色圆台。" width="1672" height="941" loading="lazy" /></button><figcaption><span>歌声转换与音乐表达</span><button type="button" data-image="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/singing-scene-v3.png" aria-label="放大查看 AI 翻唱 场景插画大图">VIEW IMAGE ＋</button></figcaption></figure>
           <div class="study-text"><h3>在旋律里，<br />听见另一种表达。</h3><div><p>把人声分离、音色转换、逐句修整与混音串成可重复执行的流程，以对照试听检验每一次调整。</p><dl><div><dt>已有工作</dt><dd>基于 Seed-VC 的十步翻唱流程，已有整曲实践与制作教程。</dd></div><div><dt>继续验证</dt><dd>音准与节奏保留、咬字和断音，以及歌声中的音色辨识度。</dd></div></dl></div></div>
           <p class="study-foot"><span>RESEARCH FOCUS</span>人声分离 / 音色转换 / 修整混音</p>
         </article>
@@ -148,5 +150,9 @@
   <footer class="site-footer"><a href="#overview">REM Lab ↑</a><span>Independent Research / Since 2026.08</span><a href="../../index.html#rem-lab">返回个人主页 ↗</a></footer>
 
   <dialog id="contents" aria-labelledby="contents-title"><div class="dialog-top"><span>REM LAB / CONTENTS</span><button type="button" class="menu-close" aria-label="关闭目录">Close ×</button></div><h2 id="contents-title">Index.</h2><nav aria-label="全部章节"><a href="#overview"><span>Overview</span><sup>—</sup></a><a href="#works"><span>Works</span><sup>00</sup></a><a href="#motion"><span>Live2D</span><sup>01</sup></a><a href="#voice"><span>AI Voice</span><sup>02</sup></a><a href="#singing"><span>AI Singing</span><sup>03</sup></a><a href="#academy"><span>Academy</span><sup>04</sup></a><a href="#practice"><span>Practice</span><sup>05</sup></a><a href="#people"><span>People</span><sup>06</sup></a><a href="#join"><span>Join the lab</span><sup>07</sup></a></nav><p>Resonance · Embodiment · Musicality</p></dialog>
+  <dialog id="image-viewer" aria-label="图片大图预览">
+    <button type="button" class="image-viewer-close" aria-label="关闭图片预览" autofocus>关闭 ×</button>
+    <img class="image-viewer-image" alt="" />
+  </dialog>
 </body>
 </html>

@@ -1,0 +1,11 @@
+/* In-page previews keep OSS attachment responses out of browser navigation. */
+button.work-cover, button.scene { width: 100%; }
+.study-plate figcaption button { min-height: 44px; text-align: right; }
+body.image-viewer-open { overflow: hidden; }
+#image-viewer { border: 0; padding: 0; margin: auto; width: 100vw; height: 100dvh; max-width: 100vw; max-height: 100dvh; background: transparent; overflow: hidden; }
+#image-viewer::backdrop { background: rgb(15 20 24 / 92%); }
+#image-viewer[open] { display: grid; place-items: center; }
+.image-viewer-image { display: block; max-width: calc(100vw - 48px); max-height: calc(100dvh - 128px); width: auto; height: auto; object-fit: contain; }
+.image-viewer-close { position: absolute; top: max(20px, env(safe-area-inset-top)); right: max(24px, env(safe-area-inset-right)); min-height: 44px; padding: 0 16px; border: 1px solid #88908e; border-radius: 3px; color: #fff; background: #252b2d; font-size: 14px; }
+.image-viewer-close:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+@media(max-width:700px) { .image-viewer-image { max-width: calc(100vw - 24px); } }
