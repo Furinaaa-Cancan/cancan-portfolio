@@ -9,6 +9,19 @@
   <link rel="stylesheet" href="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/lab.css" />
   <script src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/lab.js" defer></script>
   <link rel="preconnect" href="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com" crossorigin />
+  <style>
+    .work-new{display:inline-block;margin-left:8px;color:#3f6352;font-size:9px;letter-spacing:.08em}
+    a.work-cover{cursor:zoom-in;transition:opacity .2s}
+    a.work-cover:hover{opacity:.88}
+    .workshop-feature{display:grid;grid-template-columns:1fr 2fr;gap:var(--gap);border-top:1px solid var(--line);margin-top:48px;padding-top:30px;align-items:center}
+    .workshop-copy{padding:0 clamp(0px,3vw,48px)}
+    .workshop-copy .work-meta{padding-top:0}
+    .workshop-copy h3{font-size:clamp(25px,3vw,42px);margin:22px 0 12px}
+    .workshop-copy>p{font-size:13px;color:var(--muted);line-height:1.8}
+    .workshop-copy .workshop-note{margin-top:28px}
+    @media(max-width:1000px) and (min-width:701px){.workshop-feature{grid-template-columns:1fr 1fr}.workshop-copy{padding:0 12px}.workshop-copy h3{font-size:26px}}
+    @media(max-width:700px){.workshop-feature{grid-template-columns:1fr;margin-top:32px;padding-top:24px;gap:16px}.workshop-copy{padding:0}.workshop-copy h3{font-size:25px;margin:9px 0 7px}.workshop-copy .workshop-note{margin-top:12px}}
+  </style>
 </head>
 <body>
   <a class="skip" href="#main">跳至正文</a>
@@ -33,7 +46,7 @@
     </section>
 
     <section class="works" id="works" aria-labelledby="works-title">
-      <header class="works-heading"><div><p class="tiny-label">HOW TO / AI 进化生活</p><h2 id="works-title">Selected works.</h2></div><div class="works-intro"><p>角色创作、声音实验与 3D 互动。<br />五期系列记录与独立作品，持续探索新的表达。</p></div></header>
+      <header class="works-heading"><div><p class="tiny-label">HOW TO / AI 进化生活</p><h2 id="works-title">Selected works.</h2></div><div class="works-intro"><p>角色创作、声音实验与 3D 互动。<br />六期系列记录与独立作品，持续探索新的表达。</p></div></header>
       <div class="works-grid">
           <article class="work-card">
             <div class="work-cover"><img src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/01-character.png" alt="第一期视频封面：Live2D 虚拟角色，原画 · 建模 · 口型。" width="1447" height="1087" fetchpriority="high" /></div>
@@ -60,12 +73,18 @@
             <div class="work-meta"><span>第五期</span><span>EP. 05</span></div>
             <h3>AI 翻唱</h3><p>分轨 · 换声 · 混音</p>
           </article>
-          <article class="work-card">
-            <div class="work-cover"><img src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/cold-drinks.png" alt="3D 互动冷饮工坊封面：蕾姆手持方块牛油果与绿色冷饮。" width="1448" height="1086" loading="lazy" /></div>
-            <div class="work-meta"><span>独立作品</span><span>CREATIVE WORKSHOP</span></div>
-            <h3>3D 互动冷饮工坊</h3><p>体素场景 · 交互体验</p>
+          <article class="work-card" id="episode-06">
+            <a class="work-cover" href="../../assets/rem-lab/works/06-body-motion.png" target="_blank" rel="noopener" aria-label="查看第六期身体联动封面原图（新标签页）"><img src="../../assets/rem-lab/works/06-body-motion.png" alt="第六期封面：用 Codex 制作 Live2D 身体联动，辅助线 · 体积 · 透视。" width="1448" height="1086" loading="lazy" /></a>
+            <div class="work-meta"><span>第六期 <span class="work-new">NEW</span></span><span>EP. 06</span></div>
+            <h3>Live2D 身体联动</h3><p>辅助线 · 体积 · 透视</p>
           </article>
       </div>
+      <article class="work-card workshop-feature">
+            <div class="work-cover"><img src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/cold-drinks.png" alt="3D 互动冷饮工坊封面：蕾姆手持方块牛油果与绿色冷饮。" width="1448" height="1086" loading="lazy" /></div>
+            <div class="workshop-copy"><div class="work-meta"><span>独立作品</span><span>CREATIVE WORKSHOP</span></div>
+            <h3>3D 互动冷饮工坊</h3><p>体素场景 · 交互体验</p>
+            <p class="workshop-note">系列之外，继续探索角色与空间的互动。</p></div>
+      </article>
     </section>
 
     <div class="research-layout">
