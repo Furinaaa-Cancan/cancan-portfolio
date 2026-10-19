@@ -18,8 +18,9 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = 'https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com'
 SITE_ORIGIN = 'https://furinaaa-cancan.github.io'
-PAGES = ('index.html', 'projects/legal-ai/index.html', 'projects/rem-lab/index.html')
-ATTR = re.compile(r'\b(src|href|poster|srcset)=([' + '\"\'' + r'])(.*?)\2', re.S)
+PAGES = ('index.html', 'projects/legal-ai/index.html', 'projects/rem-lab/index.html',
+         'projects/rem-lab/disease/index.html')
+ATTR = re.compile(r'\b(src|href|poster|srcset|data-image|data-video)=([' + '\"\'' + r'])(.*?)\2', re.S)
 CSS_URL = re.compile(r'url\(\s*[\"\']?([^\)\"\']+)')
 EXISTING_VIDEO = {'assets/showreel.mp4', 'assets/showreel-10bit.mp4'}
 
@@ -53,7 +54,7 @@ class References(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         for key, value in attrs:
-            if value and key in ('src', 'href', 'poster', 'srcset'):
+            if value and key in ('src', 'href', 'poster', 'srcset', 'data-image', 'data-video'):
                 if key == 'srcset':
                     self.urls.extend(part.strip().split()[0] for part in value.split(','))
                 else:
@@ -159,7 +160,7 @@ def verify_and_activate(output):
     # All verification must pass before changing any source HTML.
     for name in PAGES:
         shutil.copyfile(output / 'pages' / name, ROOT / name)
-    print('Verified all remote assets and font CORS; updated the three source pages.')
+    print('Verified all remote assets and font CORS; updated the source pages.')
     print('Preview and review the diff before committing and publishing.')
 
 

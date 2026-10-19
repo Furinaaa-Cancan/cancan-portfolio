@@ -40,6 +40,21 @@
       "width": 1448,
       "height": 1086,
       "sha256": "1026f4a40a47077aea3997ed2f0fc12f297a96505c41a1d18971b6efcf70bd9f"
+    },
+    {
+      "episode": 6,
+      "title": "Live2D 身体联动",
+      "filename": "06-body-motion.png",
+      "width": 1448,
+      "height": 1086,
+      "sha256": "35bdfda31d99fb8840a3767d32eebb6079b8d51a66f7b583e4ec462ef2b226b6",
+      "preview": {
+        "filename": "06-body-motion.webp",
+        "width": 960,
+        "height": 720,
+        "bytes": 96640,
+        "sha256": "f427a5d7c12e0d1590c507ac9d2c9d08043bdca3b9540c78e5542b568596ac9e"
+      }
     }
   ],
   "independent_works": [
@@ -49,6 +64,24 @@
       "width": 1448,
       "height": 1086,
       "sha256": "ed1281bb203a497212a06ad6cc6c0414097bac7c1ba6e26622641aff4cc3c6a7"
+    },
+    {
+      "title": "DISEASE · 蕾姆",
+      "filename": "disease.png",
+      "width": 1448,
+      "height": 1086,
+      "sha256": "94be420e3a012b151559d3e7b1274a6e779044bc09c7017871638e4dff4e61df",
+      "preview": {
+        "filename": "disease.webp",
+        "width": 960,
+        "height": 720,
+        "bytes": 99434,
+        "sha256": "ee4ba4fe9db42f06ab36e7af55160b6b0b2dc610e796233853173ae1a55fcbfd"
+      },
+      "type": "AI 翻唱 · 水粉风格 MV",
+      "duration_seconds": 230,
+      "original_artist": "Lady Gaga",
+      "produced_by": "REM Lab"
     }
   ]
 }

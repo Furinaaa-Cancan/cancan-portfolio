@@ -12,7 +12,7 @@
 python3 tools/prepare_oss.py /tmp/cancan-oss-release
 ```
 
-工具只收集三个页面实际引用的资源，并递归收集 CSS、SVG 的依赖。输出包含：
+工具只收集网站页面实际引用的资源（包括点击放大的原图），并递归收集 CSS、SVG 的依赖。输出包含：
 
 - `upload/portfolio/<内容版本>/assets/`：待上传文件，保持完整目录结构。
 - `pages/`：准备切换的三个 HTML 页面。
@@ -29,7 +29,7 @@ python3 tools/prepare_oss.py /tmp/cancan-oss-release
 python3 tools/prepare_oss.py /tmp/cancan-oss-release --activate
 ```
 
-激活会检查源文件是否变化、所有资源的远端状态/大小/类型、字体 CORS，以及已有视频地址。任一检查失败，不修改源页面。全部通过后，才将三个 HTML 页面的资源地址切换至 OSS，并移除重复的本地 showreel 视频来源。
+激活会检查源文件是否变化、所有资源的远端状态/大小/类型、字体 CORS，以及已有视频地址。任一检查失败，不修改源页面。全部通过后，才将 HTML 页面的资源地址切换至 OSS，并移除重复的本地 showreel 视频来源。
 
 激活后检查本地页面的图片、字体、视频、交互及窄屏布局，再审阅 Git 差异并发布。此流程不删除云端文件，也不改变网站导航地址。
 

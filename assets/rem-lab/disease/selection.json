@@ -1,0 +1,365 @@
+{
+  "scope": "14 curated paintings used by final MV v17/v35 only. Earlier storyboards, unused candidates and technical/reference imagery are excluded from display.",
+  "items": [
+    {
+      "order": 1,
+      "id": "D001",
+      "title": "月下舞台",
+      "reason": "完整远景建立空间，深蓝与月光层次清楚",
+      "timecode": "00:00",
+      "first_frame": 0,
+      "width": 1672,
+      "height": 941,
+      "source": "35_MV连续帧与剪影_v04/素材/新增分镜/N01_月亮与拱门舞台的可辨极远景_v2.png",
+      "source_sha256": "c80a14fb25dc72077f4b134a78b435932ee49967a36e45ed1dcb500f4a8bba96",
+      "events": [
+        {
+          "id": "E001",
+          "shot": "K01",
+          "start": 0,
+          "end": 90
+        }
+      ],
+      "original": "01-d001.png",
+      "preview": "01-d001-800.webp",
+      "large": "01-d001-1672.webp",
+      "title_en": "Moonlit stage"
+    },
+    {
+      "order": 2,
+      "id": "D002",
+      "title": "暖沙序幕",
+      "reason": "暖沙俯拍与角色关系形成冷暖反差",
+      "timecode": "00:03",
+      "first_frame": 90,
+      "width": 1672,
+      "height": 941,
+      "source": "35_MV连续帧与剪影_v04/素材/新增分镜/N02_暖沙与黑发骷髅_用户母图修正_v2.png",
+      "source_sha256": "ddd24777e78ea90067346efc92da1edf0826e4b82a66d013657fe9f8a5de5755",
+      "events": [
+        {
+          "id": "E002",
+          "shot": "K02",
+          "start": 90,
+          "end": 165
+        }
+      ],
+      "original": "02-d002.png",
+      "preview": "02-d002-800.webp",
+      "large": "02-d002-1672.webp",
+      "title_en": "Prologue in warm sand"
+    },
+    {
+      "order": 3,
+      "id": "D003",
+      "title": "蓝色拱门",
+      "reason": "对称构图与矩形沙床强化舞台结构",
+      "timecode": "00:05",
+      "first_frame": 165,
+      "width": 1920,
+      "height": 1080,
+      "source": "31_MV静态分镜剪辑_v01/素材/K03_拱门广景与右侧人物.png",
+      "source_sha256": "2af752cc4067d0e40a0d2436c97440349894c684c3ae8ac23d40ccd511c35e96",
+      "events": [
+        {
+          "id": "E003",
+          "shot": "K03",
+          "start": 165,
+          "end": 240
+        }
+      ],
+      "original": "03-d003.png",
+      "preview": "03-d003-800.webp",
+      "large": "03-d003-1672.webp",
+      "title_en": "The blue arch"
+    },
+    {
+      "order": 4,
+      "id": "D013",
+      "title": "群舞中心",
+      "reason": "中心人物清楚，左右群舞形成包围感",
+      "timecode": "00:47",
+      "first_frame": 1432,
+      "width": 1672,
+      "height": 941,
+      "source": "24_视频与图片素材整理_20261017/02_水粉原画_当前23张/S10_仰身与凝视.png",
+      "source_sha256": "bfb5298aa9edb1414d85eb2530fc67426ba26a199351fb79996238938b9f3fcc",
+      "events": [
+        {
+          "id": "E018",
+          "shot": "K09",
+          "start": 1432,
+          "end": 1556
+        }
+      ],
+      "original": "04-d013.png",
+      "preview": "04-d013-800.webp",
+      "large": "04-d013-1672.webp",
+      "title_en": "At the centre"
+    },
+    {
+      "order": 5,
+      "id": "D022",
+      "title": "举手近景",
+      "reason": "与用户封面一致的核心画面，人物表情与举手姿态鲜明",
+      "timecode": "01:17",
+      "first_frame": 2324,
+      "width": 1672,
+      "height": 941,
+      "source": "32_MV全曲静态分镜_v01/补绘/K05-K23/K17_静态水粉.png",
+      "source_sha256": "37403af2d083fc61e208882f270db5946f62e92b4feef68da3320ee99b118cd6",
+      "events": [
+        {
+          "id": "E034",
+          "shot": "K17",
+          "start": 2324,
+          "end": 2392
+        }
+      ],
+      "original": "05-d022.png",
+      "preview": "05-d022-800.webp",
+      "large": "05-d022-1672.webp",
+      "title_en": "Hands to the light"
+    },
+    {
+      "order": 6,
+      "id": "D024",
+      "title": "舞者与背影",
+      "reason": "反向机位增加景深与画面变化",
+      "timecode": "01:21",
+      "first_frame": 2448,
+      "width": 1672,
+      "height": 941,
+      "source": "35_MV连续帧与剪影_v04/素材/新增分镜/N07_近距离面具舞者遮挡与后方主角.png",
+      "source_sha256": "988e1dbe6fa8e1d838afff9beacdc3fe7b10b48e27cea9168aaa5a26b24c0306",
+      "events": [
+        {
+          "id": "E036",
+          "shot": "K18",
+          "start": 2448,
+          "end": 2524
+        }
+      ],
+      "original": "06-d024.png",
+      "preview": "06-d024-800.webp",
+      "large": "06-d024-1672.webp",
+      "title_en": "Among the dancers"
+    },
+    {
+      "order": 7,
+      "id": "D041",
+      "title": "舞台剪影",
+      "reason": "强轮廓和背光提供节奏停顿",
+      "timecode": "02:28",
+      "first_frame": 4441,
+      "width": 1672,
+      "height": 941,
+      "source": "32_MV全曲静态分镜_v01/补绘/K25-K33/K29_水粉静态.png",
+      "source_sha256": "2e849e0e2f8563b1d4cadb3f657f500ea8d48952adc6f355e4709fc5cf9778fb",
+      "events": [
+        {
+          "id": "E059",
+          "shot": "K29",
+          "start": 4441,
+          "end": 4546
+        }
+      ],
+      "original": "07-d041.png",
+      "preview": "07-d041-800.webp",
+      "large": "07-d041-1672.webp",
+      "title_en": "A silhouette in blue"
+    },
+    {
+      "order": 8,
+      "id": "D049",
+      "title": "沙中相遇",
+      "reason": "双人关系从远景进入叙事，沙床与冷蓝舞台对照",
+      "timecode": "02:50",
+      "first_frame": 5103,
+      "width": 1672,
+      "height": 941,
+      "source": "35_MV连续帧与剪影_v04/素材/新增分镜/N10_沙中初现艾米莉亚的空间关系.png",
+      "source_sha256": "da46e9cc7cf45f44caf17b221c8cc9eed04f57c142a7ad57813e422e44e1330e",
+      "events": [
+        {
+          "id": "E066",
+          "shot": "K34",
+          "start": 5103,
+          "end": 5175
+        }
+      ],
+      "original": "08-d049.png",
+      "preview": "08-d049-800.webp",
+      "large": "08-d049-1672.webp",
+      "title_en": "An encounter in the sand"
+    },
+    {
+      "order": 9,
+      "id": "D054",
+      "title": "双人牵制",
+      "reason": "两个人物对角相对，动作与色彩关系清楚",
+      "timecode": "03:02",
+      "first_frame": 5464,
+      "width": 1672,
+      "height": 941,
+      "source": "35_MV连续帧与剪影_v04/素材/新增分镜/N24_牵制后扭身.png",
+      "source_sha256": "23b7380d7e3f6e5b0e93cd9ba766bb57ca13ee485e96a785625d84c6b991f865",
+      "events": [
+        {
+          "id": "E071",
+          "shot": "K34",
+          "start": 5464,
+          "end": 5497
+        },
+        {
+          "id": "E071_v14_02",
+          "shot": "K34",
+          "start": 5497,
+          "end": 5531
+        },
+        {
+          "id": "E071_v14_03",
+          "shot": "K34",
+          "start": 5540,
+          "end": 5549
+        },
+        {
+          "id": "E071_v14_04",
+          "shot": "K34",
+          "start": 5567,
+          "end": 5576
+        }
+      ],
+      "original": "09-d054.png",
+      "preview": "09-d054-800.webp",
+      "large": "09-d054-1672.webp",
+      "title_en": "Held in tension"
+    },
+    {
+      "order": 10,
+      "id": "D058",
+      "title": "俯拍角力",
+      "reason": "俯拍呈现双人姿态，暖沙与深色服饰对比",
+      "timecode": "03:10",
+      "first_frame": 5721,
+      "width": 1672,
+      "height": 941,
+      "source": "35_MV连续帧与剪影_v04/素材/新增分镜/N14_K36_191秒动作帧.png",
+      "source_sha256": "9a2bb0d93e16cdace3d3ca48240ab8c1207183ae1c8adb4f0a1108fb9e30c8c3",
+      "events": [
+        {
+          "id": "E075",
+          "shot": "K36",
+          "start": 5721,
+          "end": 5771
+        }
+      ],
+      "original": "10-d058.png",
+      "preview": "10-d058-800.webp",
+      "large": "10-d058-1672.webp",
+      "title_en": "A view from above"
+    },
+    {
+      "order": 11,
+      "id": "D062",
+      "title": "飞沙",
+      "reason": "低机位与飞沙提供动势，避免相近姿态重复",
+      "timecode": "03:15",
+      "first_frame": 5872,
+      "width": 1672,
+      "height": 941,
+      "source": "35_MV连续帧与剪影_v04/素材/新增分镜/N11_低侧摔落与飞沙动作.png",
+      "source_sha256": "96df11aa21f5fdecbf5a6d68fe2f2a55e9978bbf43a04dcd2f6e06f7db8c604c",
+      "events": [
+        {
+          "id": "E079",
+          "shot": "K38",
+          "start": 5872,
+          "end": 5906
+        }
+      ],
+      "original": "11-d062.png",
+      "preview": "11-d062-800.webp",
+      "large": "11-d062-1672.webp",
+      "title_en": "Sand in motion"
+    },
+    {
+      "order": 12,
+      "id": "D075",
+      "title": "扭身",
+      "reason": "对抗段具有动作张力的完整中景",
+      "timecode": "03:34",
+      "first_frame": 6424,
+      "width": 1672,
+      "height": 941,
+      "source": "35_MV连续帧与剪影_v04/素材/新增分镜/N20_K42_217.7秒短发修正_v2.png",
+      "source_sha256": "49bb805808a4166667a504e1e819e8fa0f3ce7a7b35a2e7fc4fde6b9d4fc523c",
+      "events": [
+        {
+          "id": "E092",
+          "shot": "K42",
+          "start": 6424,
+          "end": 6467
+        },
+        {
+          "id": "E092_v14_02",
+          "shot": "K42",
+          "start": 6467,
+          "end": 6495
+        }
+      ],
+      "original": "12-d075.png",
+      "preview": "12-d075-800.webp",
+      "large": "12-d075-1672.webp",
+      "title_en": "The turn"
+    },
+    {
+      "order": 13,
+      "id": "D079",
+      "title": "余温",
+      "reason": "靠近尾声的人物近景，情绪转为平缓",
+      "timecode": "03:41",
+      "first_frame": 6638,
+      "width": 1672,
+      "height": 941,
+      "source": "32_MV全曲静态分镜_v01/补绘/K43-K45/K44.png",
+      "source_sha256": "417b4a1525facd28d783f26642447ec5ec153ad3d875a2f4203e4e66b85d0371",
+      "events": [
+        {
+          "id": "E096",
+          "shot": "K44",
+          "start": 6638,
+          "end": 6747
+        }
+      ],
+      "original": "13-d079.png",
+      "preview": "13-d079-800.webp",
+      "large": "13-d079-1672.webp",
+      "title_en": "After the storm"
+    },
+    {
+      "order": 14,
+      "id": "D080",
+      "title": "落幕",
+      "reason": "俯拍双人终态，作为叙事收束",
+      "timecode": "03:44",
+      "first_frame": 6747,
+      "width": 1672,
+      "height": 941,
+      "source": "32_MV全曲静态分镜_v01/补绘/K43-K45/K45.png",
+      "source_sha256": "6da83ac8c2b7a9935e6c4df12ed24fc7e6651c5590c3fdebdcb69f6ce88d5801",
+      "events": [
+        {
+          "id": "E097",
+          "shot": "K45",
+          "start": 6747,
+          "end": 6900
+        }
+      ],
+      "original": "14-d080.png",
+      "preview": "14-d080-800.webp",
+      "large": "14-d080-1672.webp",
+      "title_en": "The final embrace"
+    }
+  ]
+}
