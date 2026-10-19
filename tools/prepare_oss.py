@@ -20,7 +20,7 @@ ORIGIN = 'https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com'
 SITE_ORIGIN = 'https://furinaaa-cancan.github.io'
 PAGES = ('index.html', 'projects/legal-ai/index.html', 'projects/rem-lab/index.html',
          'projects/rem-lab/disease/index.html')
-ATTR = re.compile(r'\b(src|href|poster|srcset|data-image|data-video|data-preview)=([' + '\"\'' + r'])(.*?)\2', re.S)
+ATTR = re.compile(r'\b(src|href|poster|srcset|data-image|data-video|data-preview|data-session)=([' + '\"\'' + r'])(.*?)\2', re.S)
 CSS_URL = re.compile(r'url\(\s*[\"\']?([^\)\"\']+)')
 EXISTING_VIDEO = {'assets/showreel.mp4', 'assets/showreel-10bit.mp4'}
 
@@ -54,7 +54,7 @@ class References(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         for key, value in attrs:
-            if value and key in ('src', 'href', 'poster', 'srcset', 'data-image', 'data-video', 'data-preview'):
+            if value and key in ('src', 'href', 'poster', 'srcset', 'data-image', 'data-video', 'data-preview', 'data-session'):
                 if key == 'srcset':
                     self.urls.extend(part.strip().split()[0] for part in value.split(','))
                 else:
@@ -70,11 +70,13 @@ def prepare(output):
     while pending:
         name = pending.pop()
         path = ROOT / name
-        if path.suffix not in ('.html', '.css', '.svg'):
+        if path.suffix not in ('.html', '.css', '.svg', '.json'):
             continue
         source = path.read_text()
         refs = References()
-        if path.suffix != '.css':
+        if path.suffix == '.json':
+            refs.urls.extend(json.loads(source).get('assets', []))
+        elif path.suffix != '.css':
             refs.feed(source)
         for url in refs.urls + CSS_URL.findall(source):
             asset = local_asset(url, path.parent)
@@ -139,6 +141,7 @@ def verify_and_activate(output):
             raise ValueError(f'Prepared page changed: {name}')
     expected_types = {'.css': 'text/css', '.js': ('application/javascript', 'text/javascript'),
                       '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.mp4': 'video/mp4',
+                      '.m4a': ('audio/mp4', 'audio/x-m4a'), '.json': 'application/json',
                       '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp'}
     for name, info in manifest['assets'].items():
         if digest(ROOT / name) != info['sha256']:
@@ -151,8 +154,8 @@ def verify_and_activate(output):
             expected = (expected,) if isinstance(expected, str) else expected
             if expected and res.headers.get_content_type() not in expected:
                 raise ValueError(f'Wrong remote Content-Type: {name}')
-            if name.endswith('.woff2') and res.headers.get('Access-Control-Allow-Origin') not in ('*', SITE_ORIGIN):
-                raise ValueError(f'Font CORS is missing: {name}')
+            if Path(name).suffix in ('.woff2', '.m4a', '.json') and res.headers.get('Access-Control-Allow-Origin') not in ('*', SITE_ORIGIN):
+                raise ValueError(f'Asset CORS is missing: {name}')
     for name in sorted(EXISTING_VIDEO):
         with urlopen(Request(f'{ORIGIN}/{Path(name).name}', method='HEAD'), timeout=30) as res:
             if res.headers.get_content_type() != 'video/mp4' or int(res.headers.get('Content-Length', 0)) <= 0:

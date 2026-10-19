@@ -92,6 +92,7 @@
 
   document.querySelectorAll('[data-video]').forEach(button => button.addEventListener('click', () => {
     stopPreview();
+    document.dispatchEvent(new CustomEvent('rem:media-start', { detail: 'film' }));
     movieOpener = button;
     movie.src = button.dataset.video;
     movieViewer.showModal();
@@ -108,7 +109,7 @@
   });
 
   const hero = document.querySelector('[data-hero]');
-  const chapters = [...document.querySelectorAll('.chapter[id]')];
+  const chapters = [...document.querySelectorAll('.sound-lab[id], .chapter[id]')];
   const scenes = [...document.querySelectorAll('[data-depth]')];
   const railLinks = [...document.querySelectorAll('[data-chapter]')];
   let scheduled = false;
