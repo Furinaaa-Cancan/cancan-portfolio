@@ -1,5 +1,5 @@
 {
-  "scope": "14 curated paintings used by final MV v17/v35 only. Earlier storyboards, unused candidates and technical/reference imagery are excluded from display.",
+  "scope": "13 curated paintings used by final MV v17/v35 only. Earlier storyboards, unused candidates and technical/reference imagery are excluded from display.",
   "items": [
     {
       "order": 1,
@@ -144,30 +144,6 @@
       "preview": "06-d024-800.webp",
       "large": "06-d024-1672.webp",
       "title_en": "Among the dancers"
-    },
-    {
-      "order": 7,
-      "id": "D041",
-      "title": "舞台剪影",
-      "reason": "强轮廓和背光提供节奏停顿",
-      "timecode": "02:28",
-      "first_frame": 4441,
-      "width": 1672,
-      "height": 941,
-      "source": "32_MV全曲静态分镜_v01/补绘/K25-K33/K29_水粉静态.png",
-      "source_sha256": "2e849e0e2f8563b1d4cadb3f657f500ea8d48952adc6f355e4709fc5cf9778fb",
-      "events": [
-        {
-          "id": "E059",
-          "shot": "K29",
-          "start": 4441,
-          "end": 4546
-        }
-      ],
-      "original": "07-d041.png",
-      "preview": "07-d041-800.webp",
-      "large": "07-d041-1672.webp",
-      "title_en": "A silhouette in blue"
     },
     {
       "order": 8,
