@@ -2,6 +2,7 @@
 import { S, on, emit, $, el, fmt, persist, restore, loadNotes, setView, fitAll, verById, sectionAt, toast, rafThrottle } from './store.js';
 import { audio } from './audio.js';
 import { BASE } from './project.js';
+import './host.js';
 import { buildLanes, overviewMouse, rulerMouse, hoverTrack, wheel, layoutOverlay, updateOverlay, drawOverview, drawArranger } from './view.js';
 import { initSide, renderVersions } from './side.js';
 import { initDrawer, renderDrawer, drawDrawerPlayhead } from './drawer.js';
@@ -182,19 +183,10 @@ async function boot() {
   window.addEventListener('pagehide', persist);
   requestAnimationFrame(frame);
   $('#loading').style.display = 'none';
+  emit('ready');
 }
 
 boot().catch((e) => {
   console.error(e);
   const l = $('#loading'); l.style.display = ''; l.textContent = '载入失败：' + (e?.message || e);
 });
-
-// Hosting bridge: the original transport also cooperates with the film on the parent page.
-on((what) => {
-  if (what === 'play' && S.play.playing && window.parent !== window)
-    window.parent.postMessage({ type: 'rem:daw-playing' }, window.location.origin);
-});
-window.addEventListener('message', (event) => {
-  if (event.origin === window.location.origin && event.source === window.parent && event.data?.type === 'rem:daw-pause') audio.pause();
-});
-window.addEventListener('pagehide', () => audio.pause());

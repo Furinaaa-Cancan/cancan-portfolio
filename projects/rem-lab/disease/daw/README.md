@@ -6,7 +6,8 @@ preserved. `provenance.json` records source and deployed file hashes.
 
 The public hosting adapter changes only project resource URLs, personal note
 persistence (browser local storage instead of writing to the production project),
-and playback coordination with the parent film player. Annotation helper text
+playback coordination with the parent film player, and chapter links that locate
+the original timeline, track and analysis drawer. Annotation helper text
 reflects that storage change. Audio rendering still belongs to the production
 pipeline; this is the original audition and review workbench.
 

@@ -23,12 +23,12 @@
     },
     "index.html": {
       "original_sha256": "c912533603a4608df99e90e763f18ecca65374ceffea03a0db9494bc41172a19",
-      "public_sha256": "c912533603a4608df99e90e763f18ecca65374ceffea03a0db9494bc41172a19",
-      "unchanged": true
+      "public_sha256": "3fe304d87191f636bbf6526de57741b5da522c2229fabf73803ac37baa4eb16b",
+      "unchanged": false
     },
     "main.js": {
       "original_sha256": "d28ffb614ef3f99b8d50531b83b751b548d28dc2380db27e03f95dda24164b59",
-      "public_sha256": "c64271a9291e71b86e1c8c6a341e98185b32ca440ac94036cee49e76b44e6cc0",
+      "public_sha256": "c62257ff501b806f0f28b5fb9b60a52259bb5922e531659daac6d36cc0d834d4",
       "unchanged": false
     },
     "side.js": {
@@ -55,7 +55,12 @@
   "adaptations": [
     "Project resource URLs point to the existing OSS bucket.",
     "Personal annotations persist in browser storage; the production project is read only.",
-    "Parent-page playback coordination pauses the DAW when the film starts."
+    "Parent-page playback coordination pauses the DAW when the film starts.",
+    "Host chapter links focus the original track, time, version comparison and native analysis drawer; audio still uses the original transport."
   ],
-  "interface": "Original HTML, CSS, Canvas layout, transport, A/B, track controls and analysis drawers."
+  "interface": "Original HTML, CSS, Canvas layout, transport, A/B, track controls and analysis drawers.",
+  "hosting_files": {
+    "project.js": "ca45158ac01c56cfc7e5653f4eef471b881a333706274281ae321d6c46522a08",
+    "host.js": "519a2d91517452a282cfe9549dea56e9fcc028103e4bf08edd6bdb25bed2e0bf"
+  }
 }

@@ -108,50 +108,31 @@
     movieOpener?.focus({ preventScroll: true });
   });
 
+
+  document.addEventListener('rem:media-start', event => { if (event.detail === 'daw') stopPreview(); });
   const hero = document.querySelector('[data-hero]');
-  const chapters = [...document.querySelectorAll('.sound-lab[id], .chapter[id]')];
-  const scenes = [...document.querySelectorAll('[data-depth]')];
-  const railLinks = [...document.querySelectorAll('[data-chapter]')];
+  const navLinks = [...document.querySelectorAll('[data-nav]')];
+  const session = document.querySelector('#sound-lab');
+  const frames = document.querySelector('#awakening');
   let scheduled = false;
   const clamp = value => Math.max(0, Math.min(1, value));
   function updateScroll() {
     scheduled = false;
-    const height = window.innerHeight;
-    const bounds = hero.getBoundingClientRect();
-    const heroProgress = clamp(-bounds.top / Math.max(1, bounds.height - height));
-    const pageProgress = clamp(window.scrollY / Math.max(1, document.documentElement.scrollHeight - height));
-    let active = '';
-    chapters.forEach(chapter => {
-      if (chapter.getBoundingClientRect().top < height * .55) active = chapter.id;
-    });
-    hero.style.setProperty('--hero-progress', heroProgress.toFixed(4));
-    document.documentElement.style.setProperty('--film-progress', pageProgress.toFixed(4));
-    if (!reducedMotion.matches) scenes.forEach(scene => {
-      const rect = scene.getBoundingClientRect();
-      const progress = clamp((height - rect.top) / (height + rect.height));
-      scene.style.setProperty('--scene-progress', progress.toFixed(4));
-    });
-    railLinks.forEach(link => link.setAttribute('aria-current', String(link.dataset.chapter === active)));
+    const height = innerHeight;
+    const progress = clamp(scrollY / Math.max(1, document.documentElement.scrollHeight - height));
+    document.documentElement.style.setProperty('--film-progress', progress.toFixed(4));
+    hero.style.setProperty('--hero-progress', reducedMotion.matches ? '0' : clamp(-hero.getBoundingClientRect().top / hero.offsetHeight).toFixed(4));
+    const active = frames.getBoundingClientRect().top < height * .45 ? 'awakening' : session.getBoundingClientRect().top < height * .55 ? 'sound-lab' : 'top';
+    navLinks.forEach(link => link.setAttribute('aria-current', String(link.dataset.nav === active)));
   }
-  function scheduleScroll() {
-    if (!scheduled) { scheduled = true; window.requestAnimationFrame(updateScroll); }
-  }
-  document.documentElement.classList.toggle('motion-ready', !reducedMotion.matches);
-  reducedMotion.addEventListener('change', event => {
-    document.documentElement.classList.toggle('motion-ready', !event.matches);
-    if (event.matches) stopPreview();
-    scheduleScroll();
-  });
-  window.addEventListener('scroll', scheduleScroll, { passive: true });
-  window.addEventListener('resize', scheduleScroll);
+  function scheduleScroll() { if (!scheduled) { scheduled = true; requestAnimationFrame(updateScroll); } }
+  addEventListener('scroll', scheduleScroll, { passive: true });
+  addEventListener('resize', scheduleScroll);
+  reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) stopPreview(); scheduleScroll(); });
   scheduleScroll();
-
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
     });
   }, { threshold: .06 });
   document.documentElement.classList.add('reveal-ready');
