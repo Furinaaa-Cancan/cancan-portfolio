@@ -17,7 +17,6 @@
     if (rail.scrollLeft >= rail.scrollWidth - rail.clientWidth - 2) current = cards.length - 1;
     document.querySelector('[data-gallery-counter]').textContent = `${String(current + 1).padStart(2, '0')} / ${cards.length}`;
     document.querySelector('[data-gallery-label]').textContent = cards[current].dataset.galleryTitle;
-    cards.forEach((card, index) => card.classList.toggle('is-current', index === current));
     document.querySelector('.gallery-meter').style.setProperty('--gallery-progress', (current + 1) / cards.length);
     chapters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.galleryChapter === cards[current].dataset.galleryGroup)));
     previous.disabled = rail.scrollLeft < 2;
