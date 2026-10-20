@@ -126,7 +126,6 @@
   const navLinks = [...document.querySelectorAll('[data-nav]')];
   const session = document.querySelector('#sound-lab');
   const frames = document.querySelector('#frames');
-  const footer = document.querySelector('.film-footer');
   const navigation = document.querySelector('.film-nav');
   let scheduled = false;
   const clamp = value => Math.max(0, Math.min(1, value));
@@ -137,9 +136,9 @@
     document.documentElement.style.setProperty('--film-progress', progress.toFixed(4));
     const sessionBounds = session.getBoundingClientRect();
     const navigationHeight = navigation.offsetHeight + 1;
-    const dark = (sessionBounds.top < navigationHeight && frames.getBoundingClientRect().top > navigationHeight) || footer.getBoundingClientRect().top < navigationHeight;
+    const dark = sessionBounds.top < navigationHeight;
     document.documentElement.dataset.zone = dark ? 'dark' : 'light';
-    const active = frames.getBoundingClientRect().top < height * .45 ? 'awakening' : session.getBoundingClientRect().top < height * .55 ? 'sound-lab' : 'top';
+    const active = sessionBounds.top < height * .45 ? 'sound-lab' : frames.getBoundingClientRect().top < height * .45 ? 'awakening' : 'top';
     navLinks.forEach(link => link.setAttribute('aria-current', String(link.dataset.nav === active)));
   }
   function scheduleScroll() { if (!scheduled) { scheduled = true; requestAnimationFrame(updateScroll); } }
