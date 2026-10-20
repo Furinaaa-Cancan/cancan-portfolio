@@ -41,10 +41,12 @@
       document.dispatchEvent(new CustomEvent('rem:media-start', { detail: 'daw' }));
     } else if (event.data?.type === 'rem:daw-cue-applied') {
       const { mode, time } = event.data;
+      frame.focus({ preventScroll: true });
       const stamp = `${String(Math.floor(time / 60)).padStart(2, '0')}:${(time % 60).toFixed(1).padStart(4, '0')}`;
       status.textContent = `${mode === 'lead' ? 'LEAD SOLO' : mode === 'compare' ? 'A/B v34 ↔ v35' : mode === 'comp' ? 'COMP CANDIDATES' : 'FILM MOMENT'} / ${stamp}`;
       document.querySelectorAll('[data-daw-cue]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.dawCue === mode)));
     }
   });
+  document.querySelectorAll('[data-daw-cue], [data-daw-time], [data-daw-fullscreen]').forEach(button => { button.disabled = false; });
   addEventListener('pagehide', pause);
 })();

@@ -113,7 +113,9 @@
   const hero = document.querySelector('[data-hero]');
   const navLinks = [...document.querySelectorAll('[data-nav]')];
   const session = document.querySelector('#sound-lab');
-  const frames = document.querySelector('#awakening');
+  const frames = document.querySelector('#frames');
+  const footer = document.querySelector('.film-footer');
+  const navigation = document.querySelector('.film-nav');
   let scheduled = false;
   const clamp = value => Math.max(0, Math.min(1, value));
   function updateScroll() {
@@ -121,7 +123,11 @@
     const height = innerHeight;
     const progress = clamp(scrollY / Math.max(1, document.documentElement.scrollHeight - height));
     document.documentElement.style.setProperty('--film-progress', progress.toFixed(4));
-    hero.style.setProperty('--hero-progress', reducedMotion.matches ? '0' : clamp(-hero.getBoundingClientRect().top / hero.offsetHeight).toFixed(4));
+    hero.style.setProperty('--hero-progress', reducedMotion.matches ? '0' : clamp(-hero.getBoundingClientRect().top / Math.max(1, hero.offsetHeight - height)).toFixed(4));
+    const sessionBounds = session.getBoundingClientRect();
+    const navigationHeight = navigation.offsetHeight + 1;
+    const dark = (sessionBounds.top < navigationHeight && frames.getBoundingClientRect().top > navigationHeight) || footer.getBoundingClientRect().top < navigationHeight;
+    document.documentElement.dataset.zone = dark ? 'dark' : 'light';
     const active = frames.getBoundingClientRect().top < height * .45 ? 'awakening' : session.getBoundingClientRect().top < height * .55 ? 'sound-lab' : 'top';
     navLinks.forEach(link => link.setAttribute('aria-current', String(link.dataset.nav === active)));
   }
