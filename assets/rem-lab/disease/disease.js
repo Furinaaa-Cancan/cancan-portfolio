@@ -121,7 +121,51 @@
     movieOpener?.focus({ preventScroll: true });
   });
 
-
+  const production = document.querySelector('#technology');
+  const chapterList = production.querySelector('.stack-chapters');
+  const chapters = [...production.querySelectorAll('[data-stack-tab]')];
+  const notes = [...production.querySelectorAll('[data-stack-page]')];
+  const compactChapters = window.matchMedia('(max-width: 720px)');
+  function selectChapter(index, focus = false) {
+    chapters.forEach((chapter, current) => {
+      const selected = current === index;
+      chapter.setAttribute('aria-selected', String(selected));
+      chapter.tabIndex = selected ? 0 : -1;
+      notes[current].hidden = !selected;
+    });
+    if (focus) chapters[index].focus({ preventScroll: true });
+    if (compactChapters.matches) {
+      chapterList.scrollTo({
+        left: chapters[index].offsetLeft - chapterList.offsetLeft - 12,
+        behavior: reducedMotion.matches ? 'instant' : 'smooth'
+      });
+    }
+    scheduleScroll();
+  }
+  function orientChapters() {
+    chapterList.setAttribute('aria-orientation', compactChapters.matches ? 'horizontal' : 'vertical');
+  }
+  orientChapters();
+  compactChapters.addEventListener('change', () => {
+    orientChapters();
+    selectChapter(chapters.findIndex(chapter => chapter.getAttribute('aria-selected') === 'true'));
+  });
+  chapters.forEach((chapter, index) => {
+    chapter.addEventListener('click', () => selectChapter(index));
+    chapter.addEventListener('keydown', event => {
+      const previous = compactChapters.matches ? 'ArrowLeft' : 'ArrowUp';
+      const next = compactChapters.matches ? 'ArrowRight' : 'ArrowDown';
+      let target;
+      if (event.key === previous) target = (index + chapters.length - 1) % chapters.length;
+      if (event.key === next) target = (index + 1) % chapters.length;
+      if (event.key === 'Home') target = 0;
+      if (event.key === 'End') target = chapters.length - 1;
+      if (target !== undefined) {
+        event.preventDefault();
+        selectChapter(target, true);
+      }
+    });
+  });
   document.addEventListener('rem:media-start', event => { if (event.detail === 'daw') stopPreview(); });
   const navLinks = [...document.querySelectorAll('[data-nav]')];
   const session = document.querySelector('#sound-lab');
@@ -136,7 +180,7 @@
     document.documentElement.style.setProperty('--film-progress', progress.toFixed(4));
     const sessionBounds = session.getBoundingClientRect();
     const navigationHeight = navigation.offsetHeight + 1;
-    const dark = sessionBounds.top < navigationHeight;
+    const dark = sessionBounds.top < navigationHeight && sessionBounds.bottom > navigationHeight;
     document.documentElement.dataset.zone = dark ? 'dark' : 'light';
     const active = sessionBounds.top < height * .45 ? 'sound-lab' : frames.getBoundingClientRect().top < height * .45 ? 'awakening' : 'top';
     navLinks.forEach(link => link.setAttribute('aria-current', String(link.dataset.nav === active)));
@@ -145,7 +189,7 @@
   addEventListener('scroll', scheduleScroll, { passive: true });
   addEventListener('resize', scheduleScroll);
   reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) stopPreview(); scheduleScroll(); });
-  scheduleScroll();
+  selectChapter(0);
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
