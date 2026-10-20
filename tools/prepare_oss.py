@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = 'https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com'
 SITE_ORIGIN = 'https://furinaaa-cancan.github.io'
 PAGES = ('index.html', 'projects/legal-ai/index.html', 'projects/rem-lab/index.html',
-         'projects/rem-lab/disease/index.html')
+         'projects/rem-lab/disease/index.html', 'projects/rem-lab/disease/daw/index.html')
 ATTR = re.compile(r'\b(src|href|poster|srcset|data-image|data-video|data-preview|data-session)=([' + '\"\'' + r'])(.*?)\2', re.S)
 CSS_URL = re.compile(r'url\(\s*[\"\']?([^\)\"\']+)')
 EXISTING_VIDEO = {'assets/showreel.mp4', 'assets/showreel-10bit.mp4'}

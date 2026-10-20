@@ -1,0 +1,61 @@
+{
+  "source": "REM Lab / cover/daw/web",
+  "files": {
+    "audio.js": {
+      "original_sha256": "27b09d9d1b8a092e811b0f71a64d75ab9ac0e3fa2736a658fab5d12332353ccf",
+      "public_sha256": "f330ddbaa820779fc994dcafefa66e7e25a97ea1b10d28db3728d193ff70e673",
+      "unchanged": false
+    },
+    "daw.css": {
+      "original_sha256": "a0652ff3c735609de4c60d1c48fa89962dad879b8498d411f6945c7524ba8520",
+      "public_sha256": "a0652ff3c735609de4c60d1c48fa89962dad879b8498d411f6945c7524ba8520",
+      "unchanged": true
+    },
+    "diff.js": {
+      "original_sha256": "e6edb5f14acfacebe59bc36e3daa63e80f31f4eb6af45fe6922f9f1420e5d5cb",
+      "public_sha256": "f8960c4e63a661eff242808e9f477fe524c51da83f30b05d9801a15337ce942e",
+      "unchanged": false
+    },
+    "drawer.js": {
+      "original_sha256": "57cf1cfde4887617a177a9addf1b0c1356bfe50220adff5e3b45d2eb809f8e25",
+      "public_sha256": "02364f13aa72679f10d86e9642f2be4644e774a202316b57a49da72c23392daf",
+      "unchanged": false
+    },
+    "index.html": {
+      "original_sha256": "c912533603a4608df99e90e763f18ecca65374ceffea03a0db9494bc41172a19",
+      "public_sha256": "c912533603a4608df99e90e763f18ecca65374ceffea03a0db9494bc41172a19",
+      "unchanged": true
+    },
+    "main.js": {
+      "original_sha256": "d28ffb614ef3f99b8d50531b83b751b548d28dc2380db27e03f95dda24164b59",
+      "public_sha256": "c64271a9291e71b86e1c8c6a341e98185b32ca440ac94036cee49e76b44e6cc0",
+      "unchanged": false
+    },
+    "side.js": {
+      "original_sha256": "09eb59d27ad224045137f558f4fa802fd715e459ae03e9837c471a982380ece2",
+      "public_sha256": "09eb59d27ad224045137f558f4fa802fd715e459ae03e9837c471a982380ece2",
+      "unchanged": true
+    },
+    "store.js": {
+      "original_sha256": "d941422eb039a9405b5a9da28e4de49dc5a5f2db560fb102a2e7843f4548067c",
+      "public_sha256": "be5dc8cae3062c021e44c0a8a7feea3102e61faeb4f4f955ccd8b8b48e81c167",
+      "unchanged": false
+    },
+    "ui.js": {
+      "original_sha256": "0746282ea212dac12eab14c6800f0f0866c2e8a5cae39cc5ed44aa4bc7715db0",
+      "public_sha256": "0746282ea212dac12eab14c6800f0f0866c2e8a5cae39cc5ed44aa4bc7715db0",
+      "unchanged": true
+    },
+    "view.js": {
+      "original_sha256": "fc06c965bbda37bc5fe587c8eb35c32658c0b356049a142c80efcfc7cbf93af8",
+      "public_sha256": "f3a3a511b65692ad91f5bff9903f5ce0d5c3d5c5ddc715174b3e94e41a047435",
+      "unchanged": false
+    }
+  },
+  "adaptations": [
+    "Project resource URLs point to the existing OSS bucket.",
+    "Personal annotations persist in browser storage; the production project is read only.",
+    "Parent-page playback coordination pauses the DAW when the film starts."
+  ],
+  "interface": "Original HTML, CSS, Canvas layout, transport, A/B, track controls and analysis drawers."
+}

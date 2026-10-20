@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>多轨台</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="app/daw.css">
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div class="brand"><span class="logo"></span><div style="min-width:0"><div class="t" id="pj-title">多轨台</div><div class="s" id="pj-sub"></div></div></div>
+    <div class="transport">
+      <button class="ic" id="bt-home" title="回到开头（Home）"><svg viewBox="0 0 16 16"><path d="M3 2h2v12H3zM14 2v12L6 8z"/></svg></button>
+      <button class="ic play" id="bt-play" title="播放 / 暂停（空格）"><svg viewBox="0 0 16 16" id="ic-play"><path d="M4 2l10 6-10 6z"/></svg></button>
+      <button class="ic" id="bt-stop" title="停止并回到播放起点（再按回到开头）"><svg viewBox="0 0 16 16"><path d="M3 3h10v10H3z"/></svg></button>
+      <button class="ic" id="bt-loop" title="循环（L）"><svg viewBox="0 0 16 16"><path d="M4 5h7V3l3 3-3 3V7H4a1 1 0 0 0-1 1v1H1V8a3 3 0 0 1 3-3zm8 6H5v2l-3-3 3-3v2h7a1 1 0 0 0 1-1V8h2v1a3 3 0 0 1-3 3z"/></svg></button>
+    </div>
+    <div class="lcd"><div class="tm" id="lcd-t">0:00.000</div><div class="sc" id="lcd-s">—</div></div>
+    <div class="ab">
+      <div class="abbtn a" id="ab-a" title="A 版本（单击切到 A；V 键来回）"><span class="k">A</span><select id="sel-a" title="选 A 的版本"></select></div>
+      <button id="ab-swap" title="A/B 切换（V），保持同一时间点"><svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor"><path d="M2 5h9V3l3 3-3 3V7H2zm12 6H5v2l-3-3 3-3v2h9z"/></svg></button>
+      <div class="abbtn b" id="ab-b" title="B 版本（单击切到 B；V 键来回）"><span class="k">B</span><select id="sel-b" title="选 B 的版本"></select></div>
+    </div>
+    <div class="meter" title="总输出电平（峰值，dBFS）"><canvas id="meter"></canvas><span class="v" id="meter-v">−∞</span></div>
+    <div class="grow"></div>
+    <div class="tools">
+      <button class="chipbtn ico" id="bt-left" title="显示 / 隐藏左侧版本与轨道栏（⌘1）"><svg viewBox="0 0 16 16"><path d="M2 2h12v12H2zm1.5 1.5v9h3v-9z"/></svg></button>
+      <button class="chipbtn ico" id="bt-right" title="显示 / 隐藏右侧问题与标注栏（⌘2）"><svg viewBox="0 0 16 16"><path d="M2 2h12v12H2zm7.5 1.5v9h3v-9z"/></svg></button>
+      <button class="chipbtn" id="bt-fit" title="看全曲（0）">全曲</button>
+      <button class="chipbtn" id="bt-pal" title="命令面板（⌘K）"><span class="kbd">⌘K</span> 命令</button>
+      <button class="chipbtn" id="bt-help" title="快捷键（?）">?</button>
+    </div>
+  </header>
+
+  <div id="body">
+    <aside id="browser">
+      <div class="ph">版本 <span class="act" id="bt-void" title="显示 / 隐藏作废的版本">隐藏作废</span></div>
+      <div class="scroll" id="ver-list" style="flex:1.2"></div>
+      <div class="ph">轨道</div>
+      <div class="scroll" id="trk-list" style="flex:1"></div>
+    </aside>
+
+    <main id="center">
+      <div class="row" id="ov-row"><div class="hdr"><b>全曲</b><span>拖白框平移</span></div><canvas id="overview"></canvas></div>
+      <div class="row"><div class="hdr"><b>时间</b><span>上半拖动＝循环区</span></div><canvas id="ruler"></canvas></div>
+      <div class="row"><div class="hdr"><b>结构</b><span>1–9 跳段 · 双击放大</span></div><div class="lane-dom" id="arranger"></div></div>
+      <div class="row"><div class="hdr"><b>问题 · 标注</b><span>N / P 逐个 · 细线＝跨度长</span></div><div class="lane-dom" id="issuelane"></div></div>
+      <div id="lanes"></div>
+      <div id="drawer">
+        <div class="grip" id="drawer-grip"></div>
+        <div class="dtabs">
+          <button class="dtab on" data-tab="spec">频谱</button>
+          <button class="dtab" data-tab="pitch">音高</button>
+          <button class="dtab" data-tab="comp">拼接</button>
+          <button class="dtab" data-tab="mixer">混音台</button>
+          <span class="sp"></span>
+          <span id="dt-extra"></span>
+          <button class="dtab" id="dt-toggle" title="收起 / 展开（D）">▾</button>
+        </div>
+        <div class="dbody" id="dbody"><div class="dh" id="dh"></div><div class="dc" id="dc"></div></div>
+      </div>
+      <div id="overlay"><div id="loopshade" class="off" hidden></div><div id="hover" hidden></div><div id="playhead"></div></div>
+    </main>
+
+    <aside id="inspector">
+      <div class="itabs"><button class="itab on" data-tab="issues">问题</button><button class="itab" data-tab="notes">标注</button><button class="itab" data-tab="info">详情</button></div>
+      <div class="ibody" id="ibody"></div>
+    </aside>
+  </div>
+
+  <footer id="statusbar">
+    <span id="st-play">已停止</span><span id="st-view" class="mono"></span><span id="st-loop" class="mono"></span><span id="st-diff"></span>
+    <span class="sp"></span><span id="st-dec"></span><span id="st-save"></span><span class="muted">空格 播放 · V 换版本 · ⌘K 命令 · ? 快捷键</span>
+  </footer>
+</div>
+
+<div class="overlay-bg" id="pal-bg" hidden><div class="pal"><input id="pal-in" placeholder="输入命令、段落、问题、版本、轨道…" autocomplete="off"><div class="list" id="pal-list"></div></div></div>
+<div class="overlay-bg" id="help-bg" hidden><div class="help"><h3>快捷键</h3><div class="cols" id="help-list"></div></div></div>
+<div id="toast"></div>
+<div class="loading" id="loading">正在载入工程…</div>
+<script type="module" src="app/main.js"></script>
+</body>
+</html>
