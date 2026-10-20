@@ -41,6 +41,19 @@
     imageOpener?.focus({ preventScroll: true });
   });
 
+  const recordHero = document.querySelector('[data-hero]');
+  let recordVisible = true;
+  function updateRecord() {
+    recordHero.classList.toggle('record-active', recordVisible && !document.hidden && !reducedMotion.matches);
+  }
+  new IntersectionObserver(entries => {
+    recordVisible = entries[0].isIntersecting;
+    updateRecord();
+  }, { threshold: .1 }).observe(recordHero);
+  document.addEventListener('visibilitychange', updateRecord);
+  reducedMotion.addEventListener('change', updateRecord);
+  updateRecord();
+
   const cover = document.querySelector('.cover-trigger');
   const preview = cover.querySelector('video');
   const movieViewer = document.querySelector('#movie-viewer');
@@ -110,7 +123,6 @@
 
 
   document.addEventListener('rem:media-start', event => { if (event.detail === 'daw') stopPreview(); });
-  const hero = document.querySelector('[data-hero]');
   const navLinks = [...document.querySelectorAll('[data-nav]')];
   const session = document.querySelector('#sound-lab');
   const frames = document.querySelector('#frames');
@@ -123,7 +135,6 @@
     const height = innerHeight;
     const progress = clamp(scrollY / Math.max(1, document.documentElement.scrollHeight - height));
     document.documentElement.style.setProperty('--film-progress', progress.toFixed(4));
-    hero.style.setProperty('--hero-progress', reducedMotion.matches ? '0' : clamp(-hero.getBoundingClientRect().top / Math.max(1, hero.offsetHeight - height)).toFixed(4));
     const sessionBounds = session.getBoundingClientRect();
     const navigationHeight = navigation.offsetHeight + 1;
     const dark = (sessionBounds.top < navigationHeight && frames.getBoundingClientRect().top > navigationHeight) || footer.getBoundingClientRect().top < navigationHeight;
