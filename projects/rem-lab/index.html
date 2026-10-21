@@ -11,20 +11,7 @@
   <link rel="preconnect" href="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com" crossorigin />
   <link rel="stylesheet" href="../../assets/image-viewer.css" />
   <script src="../../assets/image-viewer.js" defer></script>
-  <style>
-    .work-new{display:inline-block;margin-left:8px;color:#3f6352;font-size:9px;letter-spacing:.08em}
-    button.work-cover{cursor:zoom-in;transition:opacity .2s}
-    button.work-cover:hover{opacity:.88}
-    .workshop-feature{display:grid;grid-template-columns:1fr 2fr;gap:var(--gap);border-top:1px solid var(--line);margin-top:48px;padding-top:30px;align-items:center}
-    #rain-love .work-cover{aspect-ratio:16/9}
-    .workshop-copy{padding:0 clamp(0px,3vw,48px)}
-    .workshop-copy .work-meta{padding-top:0}
-    .workshop-copy h3{font-size:clamp(25px,3vw,42px);margin:22px 0 12px}
-    .workshop-copy>p{font-size:13px;color:var(--muted);line-height:1.8}
-    .workshop-copy .workshop-note{margin-top:28px}
-    @media(max-width:1000px) and (min-width:701px){.workshop-feature{grid-template-columns:1fr 1fr}.workshop-copy{padding:0 12px}.workshop-copy h3{font-size:26px}}
-    @media(max-width:700px){.workshop-feature{grid-template-columns:1fr;margin-top:32px;padding-top:24px;gap:16px}.workshop-copy{padding:0}.workshop-copy h3{font-size:25px;margin:9px 0 7px}.workshop-copy .workshop-note{margin-top:12px}}
-  </style>
+  <link rel="stylesheet" href="../../assets/rem-lab/works.css?v=5b9c86e2cc7d" />
   <link rel="stylesheet" href="../../assets/rem-lab/daw/embed.css?v=96fcd7f16066" />
 </head>
 <body>
@@ -49,58 +36,112 @@
 
     </section>
 
-    <section class="works" id="works" aria-labelledby="works-title">
-      <header class="works-heading"><div><p class="tiny-label">HOW TO / AI 进化生活</p><h2 id="works-title">Selected works.</h2></div><div class="works-intro"><p>角色创作、声音实验与 3D 互动。<br />六期系列记录与独立作品，持续探索新的表达。</p></div></header>
-      <div class="works-grid">
-          <article class="work-card">
-            <div class="work-cover"><img src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/01-character.png" alt="第一期视频封面：Live2D 虚拟角色，原画 · 建模 · 口型。" width="1447" height="1087" fetchpriority="high" /></div>
-            <div class="work-meta"><span>第一期</span><span>EP. 01</span></div>
-            <h3>Live2D 虚拟角色</h3><p><strong>纯 AI 制作</strong> · 用 Codex 从零制作</p>
+    <section aria-labelledby="works-title" class="works" id="works">
+      <header class="works-heading">
+        <div>
+          <p class="tiny-label">00 / A CREATIVE ARCHIVE</p>
+          <h2 id="works-title">Selected <em>works.</em></h2>
+        </div>
+        <div class="works-intro">
+          <p>角色创作、声音实验与 3D 互动。<br/>六期系列记录与独立作品，持续探索新的表达。</p>
+          <nav aria-label="作品分类" class="works-jumps"><a href="#works-series">The series <span>01—06</span><i aria-hidden="true">↘</i></a><a href="#works-independent">Independent works <span>03</span><i aria-hidden="true">↘</i></a></nav>
+        </div>
+      </header>
+      <section aria-labelledby="works-series-title" class="works-collection" id="works-series">
+        <header class="collection-heading">
+          <p class="collection-label">01 / THE SERIES</p>
+          <h3 id="works-series-title">Making a<br/> character.</h3>
+          <p class="collection-description">HOW TO / AI 进化生活<br/>六期创作记录，从原画到舞台。</p>
+          <span aria-label="6 episodes" class="collection-count">06 <small>EPISODES</small></span>
+        </header>
+        <div class="works-grid">
+          <article class="work-card series-card" id="episode-01">
+            <button aria-label="放大查看第1期视频封面原图" class="work-cover" data-image="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/01-character.png" type="button"><img alt="第一期视频封面：Live2D 虚拟角色，原画 · 建模 · 口型。" decoding="async" fetchpriority="high" height="1087" src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/01-character.png" width="1447"/></button>
+            <div class="work-caption">
+              <div class="work-meta"><span>第一期</span><span>EP. 01</span></div>
+              <h4 class="work-title">Live2D 虚拟角色</h4>
+              <p><strong>纯 AI 制作</strong> · 用 Codex 从零制作</p>
+            </div>
           </article>
-          <article class="work-card">
-            <div class="work-cover"><img src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/02-jelly-eyes.png" alt="第二期视频封面：Live2D 果冻眼，分层 · 高光 · 动态。" width="1447" height="1087" loading="lazy" /></div>
-            <div class="work-meta"><span>第二期</span><span>EP. 02</span></div>
-            <h3>Live2D 果冻眼</h3><p>分层 · 高光 · 动态</p>
+          <article class="work-card series-card" id="episode-02">
+            <button aria-label="放大查看第2期视频封面原图" class="work-cover" data-image="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/02-jelly-eyes.png" type="button"><img alt="第二期视频封面：Live2D 果冻眼，分层 · 高光 · 动态。" decoding="async" height="1087" loading="lazy" src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/02-jelly-eyes.png" width="1447"/></button>
+            <div class="work-caption">
+              <div class="work-meta"><span>第二期</span><span>EP. 02</span></div>
+              <h4 class="work-title">Live2D 果冻眼</h4>
+              <p>分层 · 高光 · 动态</p>
+            </div>
           </article>
-          <article class="work-card">
-            <div class="work-cover"><img src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/03-four-corners.png" alt="第三期视频封面：Live2D 四角合成，转头 · 透视 · 合成。" width="1448" height="1086" loading="lazy" /></div>
-            <div class="work-meta"><span>第三期</span><span>EP. 03</span></div>
-            <h3>Live2D 四角合成</h3><p>转头 · 透视 · 合成</p>
+          <article class="work-card series-card" id="episode-03">
+            <button aria-label="放大查看第3期视频封面原图" class="work-cover" data-image="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/03-four-corners.png" type="button"><img alt="第三期视频封面：Live2D 四角合成，转头 · 透视 · 合成。" decoding="async" height="1086" loading="lazy" src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/03-four-corners.png" width="1448"/></button>
+            <div class="work-caption">
+              <div class="work-meta"><span>第三期</span><span>EP. 03</span></div>
+              <h4 class="work-title">Live2D 四角合成</h4>
+              <p>转头 · 透视 · 合成</p>
+            </div>
           </article>
-          <article class="work-card">
-            <div class="work-cover"><img src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/04-hair.png" alt="第四期视频封面：Live2D 完整头发，拆发 · 装配 · 仿真。" width="1448" height="1086" loading="lazy" /></div>
-            <div class="work-meta"><span>第四期</span><span>EP. 04</span></div>
-            <h3>Live2D 完整头发</h3><p>拆发 · 装配 · 仿真</p>
+          <article class="work-card series-card" id="episode-04">
+            <button aria-label="放大查看第4期视频封面原图" class="work-cover" data-image="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/04-hair.png" type="button"><img alt="第四期视频封面：Live2D 完整头发，拆发 · 装配 · 仿真。" decoding="async" height="1086" loading="lazy" src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/04-hair.png" width="1448"/></button>
+            <div class="work-caption">
+              <div class="work-meta"><span>第四期</span><span>EP. 04</span></div>
+              <h4 class="work-title">Live2D 完整头发</h4>
+              <p>拆发 · 装配 · 仿真</p>
+            </div>
           </article>
-          <article class="work-card">
-            <div class="work-cover"><img src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/05-singing.png" alt="第五期视频封面：AI 翻唱，分轨 · 换声 · 混音。" width="1448" height="1086" loading="lazy" /></div>
-            <div class="work-meta"><span>第五期</span><span>EP. 05</span></div>
-            <h3>AI 翻唱</h3><p>分轨 · 换声 · 混音</p>
+          <article class="work-card series-card" id="episode-05">
+            <button aria-label="放大查看第5期视频封面原图" class="work-cover" data-image="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/05-singing.png" type="button"><img alt="第五期视频封面：AI 翻唱，分轨 · 换声 · 混音。" decoding="async" height="1086" loading="lazy" src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/05-singing.png" width="1448"/></button>
+            <div class="work-caption">
+              <div class="work-meta"><span>第五期</span><span>EP. 05</span></div>
+              <h4 class="work-title">AI 翻唱</h4>
+              <p>分轨 · 换声 · 混音</p>
+            </div>
           </article>
-          <article class="work-card" id="episode-06">
-            <button type="button" class="work-cover" data-image="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/2e6975145df61413/assets/rem-lab/works/06-body-motion.png" aria-label="放大查看第六期身体联动封面原图"><img src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/2e6975145df61413/assets/rem-lab/works/06-body-motion.webp" alt="第六期封面：用 Codex 制作 Live2D 身体联动，辅助线 · 体积 · 透视。" width="1448" height="1086" loading="lazy" decoding="async" /></button>
-            <div class="work-meta"><span>第六期 <span class="work-new">NEW</span></span><span>EP. 06</span></div>
-            <h3>Live2D 身体联动</h3><p>辅助线 · 体积 · 透视</p>
+          <article class="work-card series-card" id="episode-06">
+            <button aria-label="放大查看第六期身体联动封面原图" class="work-cover" data-image="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/2e6975145df61413/assets/rem-lab/works/06-body-motion.png" type="button"><img alt="第六期封面：用 Codex 制作 Live2D 身体联动，辅助线 · 体积 · 透视。" decoding="async" height="1086" loading="lazy" src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/2e6975145df61413/assets/rem-lab/works/06-body-motion.webp" width="1448"/></button>
+            <div class="work-caption">
+              <div class="work-meta"><span>第六期 <span class="work-new">NEW</span></span><span>EP. 06</span></div>
+              <h4 class="work-title">Live2D 身体联动</h4>
+              <p>辅助线 · 体积 · 透视</p>
+            </div>
           </article>
-      </div>
-      <article class="work-card workshop-feature">
-            <div class="work-cover"><img src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/cold-drinks.png" alt="3D 互动冷饮工坊封面：蕾姆手持方块牛油果与绿色冷饮。" width="1448" height="1086" loading="lazy" /></div>
-            <div class="workshop-copy"><div class="work-meta"><span>独立作品</span><span>CREATIVE WORKSHOP</span></div>
-            <h3>3D 互动冷饮工坊</h3><p>体素场景 · 交互体验</p>
-            <p class="workshop-note">系列之外，继续探索角色与空间的互动。</p></div>
-      </article>
-      <article class="work-card workshop-feature" id="rain-love">
-            <button type="button" class="work-cover" data-image="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/f401a128218ac085/assets/rem-lab/works/rain-love.png" aria-label="放大查看雨爱四人乐队封面原图"><img src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/f401a128218ac085/assets/rem-lab/works/rain-love-960.webp" srcset="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/f401a128218ac085/assets/rem-lab/works/rain-love-640.webp 640w, https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/f401a128218ac085/assets/rem-lab/works/rain-love-960.webp 960w, https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/f401a128218ac085/assets/rem-lab/works/rain-love-1280.webp 1280w" sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1000px) calc(50vw - 33px), (min-width: 1700px) calc(33.333vw - 44px), calc(33.333vw - 29.333px)" alt="雨爱视频封面：蓝紫色舞台上，蕾姆持麦演唱，拉姆弹贝斯、艾米莉亚弹键盘、昴打鼓。" width="1920" height="1080" loading="lazy" decoding="async" /></button>
-            <div class="workshop-copy"><div class="work-meta"><span>音乐作品</span><span>AI COVER / 雨爱</span></div>
-            <h3>雨爱 · 蕾姆与伙伴</h3><p>AI 翻唱 · 四人乐队</p>
-            <p class="workshop-note">让角色的声音，在舞台上相遇。</p></div>
-      </article>
-      <article class="work-card workshop-feature" id="disease">
-            <button type="button" class="work-cover" data-image="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/2e6975145df61413/assets/rem-lab/works/disease.png" aria-label="放大查看 DISEASE 蕾姆翻唱封面原图"><img src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/2e6975145df61413/assets/rem-lab/works/disease.webp" alt="DISEASE 翻唱封面：水粉画风的蕾姆闭眼举起双手，配有致敬 Lady Gaga 与 REM Lab 出品的英文标题。" width="1448" height="1086" loading="lazy" decoding="async" /></button>
-            <div class="workshop-copy"><div class="work-meta"><span>Music film</span><span>AI COVER / DISEASE</span></div>
-            <h3>DISEASE · Rem</h3><p>AI cover · Gouache music video · 03:50</p>
-            <p class="workshop-note">A tribute to Lady Gaga.<br />Produced by REM Lab.<br /><a href="disease/index.html">Explore the film ↗</a></p></div>
-      </article>
+        </div>
+      </section>
+      <section aria-labelledby="works-independent-title" class="works-collection works-collection--independent" id="works-independent" lang="en">
+        <header class="collection-heading">
+          <p class="collection-label">02 / INDEPENDENT</p>
+          <h3 id="works-independent-title">Sound, vision<br/> &amp; play.</h3>
+          <p class="collection-description">Beyond the series.<br/> Experiments in sound &amp; space.</p>
+          <span aria-label="3 works" class="collection-count">03 <small>WORKS</small></span>
+        </header>
+        <div class="independent-grid">
+          <article class="work-card feature-card feature-card--film" id="disease">
+            <button aria-label="View the original DISEASE cover" class="work-cover" data-image="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/2e6975145df61413/assets/rem-lab/works/disease.png" type="button"><img alt="DISEASE cover: Rem raises her hands with her eyes closed, painted in gouache, with a tribute to Lady Gaga and REM Lab production credits." decoding="async" height="1086" loading="lazy" src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/2e6975145df61413/assets/rem-lab/works/disease.webp" width="1448"/></button>
+            <div class="work-caption">
+              <div class="work-meta"><span>Music film</span><span>AI COVER / DISEASE</span></div>
+              <h4 class="work-title">DISEASE · Rem</h4>
+              <p>AI cover · Gouache music video · 03:50</p>
+              <p class="work-note">A tribute to Lady Gaga.<br/>Produced by REM Lab.<br/><a href="disease/index.html">Explore the film ↗</a></p>
+            </div>
+          </article>
+          <article class="work-card feature-card feature-card--song" id="rain-love">
+            <button aria-label="View the original Rain Love cover" class="work-cover" data-image="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/f401a128218ac085/assets/rem-lab/works/rain-love.png" type="button"><img alt="Rain Love cover: Rem sings on a blue and violet stage, with Ram on bass, Emilia on keyboards and Subaru on drums." decoding="async" height="1080" loading="lazy" sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1000px) calc(50vw - 33px), (max-width: 1100px) calc(50vw - 44px), (min-width: 1700px) calc(50vw - 157px), calc(50vw - 135px)" src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/f401a128218ac085/assets/rem-lab/works/rain-love-960.webp" srcset="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/f401a128218ac085/assets/rem-lab/works/rain-love-640.webp 640w, https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/f401a128218ac085/assets/rem-lab/works/rain-love-960.webp 960w, https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/f401a128218ac085/assets/rem-lab/works/rain-love-1280.webp 1280w" width="1920"/></button>
+            <div class="work-caption">
+              <div class="work-meta"><span>Music</span><span>AI COVER / RAIN LOVE</span></div>
+              <h4 class="work-title">Rain Love · Rem &amp; Friends</h4>
+              <p>AI cover · Four-piece band</p>
+              <p class="work-note">Character voices, together on one stage.</p>
+            </div>
+          </article>
+          <article class="work-card feature-card feature-card--play" id="cold-drinks">
+            <button aria-label="View the original 3D Cold Drinks Workshop cover" class="work-cover" data-image="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/cold-drinks.png" type="button"><img alt="3D Cold Drinks Workshop cover: Rem holds a voxel avocado and a green cold drink." decoding="async" height="1086" loading="lazy" src="https://cancan-portfolio-media.oss-cn-shanghai.aliyuncs.com/portfolio/b059b4d94fa9f4ac/assets/rem-lab/works/cold-drinks.png" width="1448"/></button>
+            <div class="work-caption">
+              <div class="work-meta"><span>Interactive work</span><span>CREATIVE WORKSHOP</span></div>
+              <h4 class="work-title">3D Cold Drinks Workshop</h4>
+              <p>Voxel scenes · Interactive experience</p>
+              <p class="work-note">Exploring characters and the spaces they inhabit.</p>
+            </div>
+          </article>
+        </div>
+      </section>
     </section>
 
     <div class="research-layout">
